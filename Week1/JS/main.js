@@ -1,6 +1,6 @@
 /*
 Alexander Herrera
-Project 3
+Project 1
 For the browser I used Google Chrome, Safari web inspector hardly worked
 */
 

@@ -1,49 +1,81 @@
 <!doctype html>
 <!--Alexander Herrera-->
-<!--Project 3-->
+<!--Project 1-->
 <html>
 	<head>
 		<!--Meta Tags-->
 		<meta charset ="utf-8"/>
 		<meta name="description" content="Application that provides multiple tools for students to stay organized for each individual class"/>
-		<meta name="keywords" content="College life, Application, Schedule, Todo list"/>
+		<meta name="keywords" content="College, Application, Schedule, Organizer, Todo list"/>
 		<meta name="robots" content="noindex, nofollow"/>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="cleartype" content="on">
 		<!--Title Tag-->
-		<title>College Schedule Launch Page</title>
+		<title>College Organizer Launch Page</title>
 		<!--Link CSS Style Sheet-->
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<link rel="stylesheet" href="CSS/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
-		<div data-role="page">
-			<div data-role="header">
-				<!--Main header--> 
-				<h1>College Schedule</h1>
+		<div data-role="page" id="home">
+ 
+			<div data-role="content">						
+				<label for ="search-basic"></label><input type ="search" name="search" id="search-Find" data-mini="true"/>
+				<img src="images/June.png" height="150px" width="300px"/>
+				<p>Balance School, Work, and Personal Activities all in one Application<p>
+				<a href="additem.html" data-role="button" id="add/view" data-ajax="false">Add/View Profile</a>
+				<label>
+				<div data-role="collapsible-set" data-content-theme="a">
+					<!--Description about the app--> 
+					<div data-role="collapsible"  data-collapsed="true" id="description">
+						<h3>About</h3>
+						<p>The purpose of this application is to have a sense of balance for the typical college student between school, work, and personal activities. By using different types of methods suchs as calendar's, todo list, reminder, and more the student will be able to organize all activites on just one device.</p>
+					</div>
+					<div data-role="collapsible" id="college">
+						<h3>College Life</h3>
+						<ul data-role="listview" data-theme="g">
+							<li><a href="sourceUnderCon.html" data-ajax="false">Course Information</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Course Assignments</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Events</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Reminders</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Todo List</a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" id="work">
+						<h3>Work Schedule</h3>	
+						<ul data-role="listview" data-theme="g">
+							<li><a href="sourceUnderCon.html" data-ajax="false">Hours</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Reminders</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Todo List</a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" id="family/personal">
+						<h3>Family/Personal</h3>
+						<ul data-role="listview" data-theme="g">
+							<li><a href="sourceUnderCon.html" data-ajax="false">Anniversaries</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Personal Journal</a></li>
+							<li><a href="sourceUnderCon.html" data-ajax="false">Shopping List</a></li>
+						</ul>	
+					</div>
+					<div data-role="collapsible" id="quick">
+						<h3>Quick Memo</h3>
+						<ul data-role="listview" data-theme="g">
+							<li><a href="sourceUnderCon.html" data-ajax="false">Quick Memo</a></li>
+						</ul>
+					</div>	
+				</div>	
 			</div>
-			<div data-role="content">
-				<!--Description about the app--> 
-				<p>This app is mainly used for college students because
-				of all the features that are included but any type of
-				student can use this app. Basically theirs a section
-				dedicated to each class that includes a schedule of
-				the day and time of that class, schedules for exams,
-				homework, and a todo list.</p>
-			</div>
-			<header>
-				<h2>Access Profile Account</h2>
-			</header>
-			<!--A Call To Action-->
-			<nav>
-				<a href='additem.html'>New Profile</a>
-			</nav>
+		</div>
+		
+
 			<!--JavaScript & JQuery-->
 			<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 			<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-			<script type ="text/javascript" src="JS/main.js"></script>
+			<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+			<script type ="text/javascript" src="js/main.js"></script> 
 		</body>
 </html>
