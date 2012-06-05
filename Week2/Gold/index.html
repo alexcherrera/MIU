@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<!-- This is the first page -->
-    <div data-role="page" id="home">
+    <div data-role="page" data-filter="true" id="home">
 			<div data-role="header" data-position="inline" data-fullscreen="true">
 				<!--Main header--> 
 				<h1>Organizer</h1>
@@ -38,10 +38,6 @@
 			</div>
  			<!--Content Section--> 
 			<div data-role="content">
-				<!--Search Button--> 						
-				<label for ="search-basic"></label><input type ="search" name="search" id="search-Find" data-mini="true"/>
-				<!--Feature Section--> 
-				<!--Image--> 
 				<img src="images/June.png" height="150px" width="300px"/>
 				<!--Description-->
 				<p>Balance School, Work, and Personal Activities all in one Application<p>
@@ -52,67 +48,33 @@
 					</a>
 				</nav>
 				<!--Browser Section--> 
-				<div data-role="collapsible-set" data-content-theme="a">
+				<h3>Organizers</h3>
+				<div data-role="listview" data-inset="true" data-filter="true" data-content-theme="a">
 					<!--Browse About--> 
-					<div data-role="collapsible" id="about">
-						<h3>About</h3>
-							<ul data-role="listview" data-theme="g">
-							 	<li><a href="sourceUnderCon.html">About this app</a></li>
-							</ul>
-					</div>
+					<li><a href="#about">About</a></li>
 					<!--Browse College--> 
-					<div data-role="collapsible" id="college">
-						<h3>College Life</h3>
-						<ul data-role="listview" data-theme="g">
-							<li><a href="#courseInformation">Course Information</a></li>
-							<li><a href="#courseAssignments">Course Assignments</a></li>
-							<li><a href="#events">Events</a></li>
-							<li><a href="#reminders">Reminders</a></li>
-							<li><a href="#todoList">Todo List</a></li>
-						</ul>
-					</div>
-					<!--Browse Work--> 
-					<div data-role="collapsible" id="work">
-						<h3>Work Schedule</h3>	
-						<ul data-role="listview" data-theme="g">
-							<li><a href="#hours">Hours</a></li>
-							<li><a href="#reminders">Reminders</a></li>
-							<li><a href="#todoList">Todo List</a></li>
-						</ul>
-					</div>
+					<li><a href="#college">College Organizer</a></li>
+					<!--Browse Work--> 		
+					<li><a href="#work">Work</a></li>
 					<!--Browse Family/Personal--> 
-					<div data-role="collapsible" id="family/personal">
-						<h3>Family/Presonal</h3>
-						<ul data-role="listview" data-theme="g">
-							<li><a href="#anniversaries">Anniversaries</a></li>
-							<li><a href="#journal">Personal Journal</a></li>
-							<li><a href="#shoppingList">Shopping List</a></li>
-						</ul>	
-					</div>
+					<li><a href="#family/personal">Family/Personal</a></li>
 					<!--Browse Memo's--> 
-					<div data-role="collapsible" id="memos">
-						<h3>Memo's</h3>
-						<ul data-role="listview" data-theme="g">
-							<li><a href="#Memo">Add Memo</a></li>
-							<li><a href="">View Memo's</a></li>
-						</ul>
-					</div>	
+					<li><a href="#memo">Memo's</a></li>
 				</div>	
-			</div>
 		</div>
 		<!--Course Information page--> 
-			<div data-role="page" id="courseInformation" id="linkpage1" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="courseInformation" id="linkpage1" data-add-back-btn="true">
 				<div data-role="header">
 					<!--Main header--> 
 					<h3>Course Info</h3>
 				
 				</div>
 				<div data-role="content">
-
+					<p>Hello</p>
 				</div>
 			</div>
 		<!--Course Assignments page--> 
-			<div data-role="page" id="courseAssignments" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="courseAssignments" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Course Assignments</h1>
@@ -123,7 +85,7 @@
 				</div>
 			</div>
 			<!--Events page--> 
-			<div data-role="page" id="events" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="events" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Events</h1>
@@ -134,7 +96,7 @@
 				</div>
 			</div>
 			<!--Reminders page--> 
-			<div data-role="page" id="reminders" data-role="page" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="reminders" data-role="page" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Reminders</h1>
@@ -145,7 +107,7 @@
 				</div>
 			</div>
 			<!--Todo List page--> 
-			<div data-role="page" id="todoList" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="todoList" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Todo List</h1>
@@ -168,7 +130,7 @@
 				</div>
 			</div>
 			<!--Reminders page--> 
-			<div data-role="page" id="reminders" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="reminders" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Reminders</h1>
@@ -179,7 +141,7 @@
 				</div>
 			</div>
 			<!--Todo List page-->
-			<div data-role="page" id="Todo List" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="Todo List" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Todo List</h1>
@@ -191,7 +153,7 @@
 			</div>
 		<!--Family/Personal links pages-->
 			<!--Anniversaries page-->
-			<div data-role="page" id="anniversaries" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="anniversaries" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Anniversaries</h1>
@@ -202,7 +164,7 @@
 				</div>
 			</div>
 			<!--Personal Journal page-->
-			<div data-role="page" id="journal" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="journal" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Personal Journal</h1>
@@ -213,7 +175,7 @@
 				</div>
 			</div>
 			<!--Shopping List page-->
-			<div data-role="page" id="shoppingList" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="shoppingList" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Shopping List</h1>
@@ -225,7 +187,7 @@
 			</div>
 		<!--Quick Memo links page-->
 			<!--Quick Memo page-->
-			<div data-role="page" id="quickMemo" data-role="page" id="linkpage" data-add-back-btn="true">
+			<div data-role="page" data-filter="true" id="quickMemo" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
 					<h1>Quick Memo</h1>
