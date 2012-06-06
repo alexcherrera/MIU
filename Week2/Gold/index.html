@@ -23,57 +23,109 @@
 	<body>
 		<!-- This is the first page -->
     <div data-role="page" data-filter="true" id="home">
-			<div data-role="header" data-position="inline" data-fullscreen="true">
-				<!--Main header--> 
-				<h1>Organizer</h1>
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#" id="navhome">Home</a></li>
-						<li><a href="#" id="linkgh-pages">Branch</a></li>
-						<li><a href="#" id="linkToOtherApp">Other</a></li>
-						<li><a href="#" id="">--</a></li>
-					</ul>
-				</div>
+		<div data-role="header" data-position="inline" data-fullscreen="true">
+			<!--Main header--> 
+			<h1>Organizer</h1>
+			<!--Navigation Bar--> 
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" id="navhome">Home</a></li>
+					<li><a href="#" id="linkgh-pages">Branch</a></li>
+					<li><a href="#" id="linkToOtherApp">Other</a></li>
+					<li><a href="#" id="">--</a></li>
+				</ul>
 			</div>
- 			<!--Content Section--> 
-			<div data-role="content">
-				<img src="images/June.png" height="150px" width="300px"/>
-				<!--Description-->
-				<p>Balance School, Work, and Personal Activities all in one Application<p>
-				<!--Call To Action Button-->
-				<!--Add Quick Memo--> 
-				<nav> 
-					<a href="additem.html" data-role="button" id="addQuickSchedule" data-ajax="false">Add Quick Schedule
-					</a>
-				</nav>
-				<!--Browser Section--> 
-				<h3>Organizers</h3>
-				<div data-role="listview" data-inset="true" data-filter="true" data-content-theme="a">
-					<!--Browse About--> 
-					<li><a href="#about">About</a></li>
-					<!--Browse College--> 
-					<li><a href="#college">College Organizer</a></li>
-					<!--Browse Work--> 		
-					<li><a href="#work">Work</a></li>
-					<!--Browse Family/Personal--> 
-					<li><a href="#family/personal">Family/Personal</a></li>
-					<!--Browse Memo's--> 
-					<li><a href="#memo">Memo's</a></li>
-				</div>	
 		</div>
-		<!--Course Information page--> 
-			<div data-role="page" data-filter="true" id="courseInformation" id="linkpage1" data-add-back-btn="true">
+		<!--Content Section--> 
+		<div data-role="content">
+			<img src="images/June.png" height="150px" width="300px"/>
+			<!--Description-->
+			<p>Balance School, Work, and Personal Activities all in one Application<p>
+			<!--Call To Action Button-->
+			<!--Add Quick Memo--> 
+			<nav> 
+				<a href="additem.html" data-role="button" id="addQuickSchedule" data-ajax="false">Add Quick Schedule
+				</a>
+			</nav>
+			<!--Browser Section--> 
+			<h3>Organizers:</h3>
+			<div data-role="listview" data-inset="true" data-filter="true" data-content-theme="a">
+			<!--Browse About--> 
+				<li data-filtertext="About, Different organizers, Information"><a href="#about" data-rel="dialog" data-theme="c"><h3>About</h3>
+					<p id="aboutDescriptText">Full description about the application</p>
+					<p> and it's features.</p></a>
+				</li>
+				<!--Browse College--> 
+				<li data-filtertext="Course information, Assignments, Events, Reminders, Todo List"><a href="#college" data-transition="flip"><h3>College Organizer</h3>
+					<p id="collegeText">Create/view course information, and more.</p></a>
+				</li>
+				<!--Browse Work--> 		
+				<li data-filtertext="Work, Hours, Reminders, Todo List"><a href="#work"><h3>Work</h3>
+					<p id="workText">Create/view work related calendar's, reminders, todo lists, due dates, and more.</p></a>
+				</li>
+				<!--Browse Family/Personal--> 
+				<li data-filtertext="Family, Personal, Anniversaries, Journal, Shopping List"><a href="#family/personal"><h3>Family/Personal</h3>
+					<p id="family/personalText">Create/view all your calendar's related to your family such as birthdays, anniversaries, shopping list, and more.</p></a>
+				</li>
+				<!--Browse Memo's--> 
+				<li data-filtertext="View Memos"><a href="#memo"><h3>Memo's</h3>
+					<p id="memoText">Create/view general memo's and or quick memo's.</p></a>
+				</li>
+			</div>
+		</div>
+	</div>
+	<!--About Page--> 
+	<div data-role="page" id="about" data-add-back-btn="true">
+		<div data-role="header">
+			<h1>About</h>
+		</div>
+		<div data-role="content">
+			<p id="aboutPage">The purpose of this application is to have a sense of balance for the typical college student between school, work, and personal activities. By using different types of methods suchs as calendar's, todo list, reminder, and more the student will be able to organize all activites on just one device.</p>
+		</div>
+	</div>
+	<!--College Page One Window Drilldown links--> 
+	<div data-role="page" id="college" data-add-back-btn="true">
+		<div data-role="header">
+			<!--Main header--> 
+			<h3>Categories</h3>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="collegeNestedList" data-content-theme="g">
+				<li><a href="#courseInformation" data-rel="dialog"><h3>Course Information</h3>
+					<p id="courseInfoPage">This calendar is designed mainly for a college student but can be used by everone. Record information about your course, such as your professor's name, start and last day of class, the time class starts and finsihes, and much more.</p>
+					</a>	
+				</li>
+				<li><a href="#courseAssignments" data-rel="dialog"><h3>Course Assignment</h3>
+					<p id="courseAssignPage">Now you have the ability to add asignments for each class, add when recieved, when the due date is, notes, and more.</p>
+					</a>
+				</li>
+				<li><a href="#events" data-rel="dialog"><h3>Events</h3>
+					<p id="collegeEventsPage">Be able to add all your college events such as activities for clubs, sororities, fraternities, and more.</p></a>
+				</li>
+				<li><a href="#remiders" data-rel="dialog"><h3>Remiders</h3>
+					<p id="collegeRemindersPage">All your reminders related to courses or anything in your college will be in this section.</p>	
+					</a>
+				</li>
+				<li><a href="#todoList" data-rel="dialog"><h3>Todo List</h3>
+					<p id="collegeTodoListPage">All your todo's for your college life will be created and stored in this section.</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+			<!--Course Information page--> 
+			<div data-role="page" id="courseInformation" data-add-back-btn="true">
 				<div data-role="header">
 					<!--Main header--> 
 					<h3>Course Info</h3>
 				
 				</div>
 				<div data-role="content">
-					<p>Hello</p>
+					
+					
 				</div>
 			</div>
-		<!--Course Assignments page--> 
+			<!--Course Assignments page--> 
 			<div data-role="page" data-filter="true" id="courseAssignments" data-role="page" id="linkpage" data-add-back-btn="true">
 				<div data-role="header" data-position="fixed">
 					<!--Main header--> 
