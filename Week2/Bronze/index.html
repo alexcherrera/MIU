@@ -14,17 +14,15 @@
 		<meta http-equiv="cleartype" content="on">
 		<!--Title Tag-->
 		<title>College Organizer Launch Page</title>
-		<!--Link Sheets-->
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
-		<link rel="stylesheet" href="css/style.css"/>
-		<!--Modernizr-->
-		
+		<!--Link CSS Style Sheet-->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
 		<!-- This is the first page -->
-	    <div data-role="page" data-filter="true" id="home" data-url="index.html">
+		<div data-role="page" data-filter="true" id="home" data-url="index.html">
 			<div data-role="header" data-position="inline" data-fullscreen="true">
-				<!--Main header--> 
+ 				<!--Main header--> 
 				<h1>Organizer</h1>
 			</div>
 			<!--Content Section--> 
@@ -38,29 +36,88 @@
 					<a href="additem.html" data-role="button" id="addQuickSchedule" data-ajax="false">Add Quick Schedule
 					</a>
 				</nav>
-				<!--Browser Section--> 
+				<!--Browser Section-->
 				<h3>Organizers:</h3>
 				<div data-role="listview" data-inset="true" data-filter="true" data-content-theme="a">
-				<!--Browse About--> 
-					<li data-filtertext="About, Different organizers, Information"><a href="#about" data-rel="dialog" data-theme="c"><img src="images/QuestionMark.png" id="aboutPic"/><h3>About</h3>
-						<p id="aboutDescriptText">Full description about the</p><p>application and it's features.</p></a>
-					</li>
-					<!--Browse College--> 
-					<li data-filtertext="Course information, Assignments, Events, Reminders, Todo List"><a href="#college" data-transition="flip"><img src="images/College.png" id="collegePic"/><h3>College Organizer</h3>
-						<p id="collegeText">Create/view course</p><p>information, and more.</p></a>
-					</li>
-					<!--Browse Work--> 		
-					<li data-filtertext="Work, Appointments, Contacts, Hours, Reminders, Todo List"><a href="#work"><img src="images/Work.png" id="workPic"/><h3>Work</h3>
-						<p id="workText">Create/view work related</p><p>calendar's, reminders,</p><p>todo lists, due dates,</p><p>and more.</p></a>
-					</li>
-					<!--Browse Family/Personal--> 
-					<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List"><a href="#familyAndpersonal"><img src="images/Family.png" id="familyPic"/><h3>Family/Personal</h3>
-						<p id="family/personalText">Create/view all your</p><p>calendar's related to your</p><p>family such as birthdays,</p><p>anniversaries, shopping</p><p>list, and more.</p></a>
-					</li>
-					<!--Browse Memo's--> 
-					<li data-filtertext="View Memos"><a href="#underConstruction" data-rel="dialog"><img src="images/Memo.png" id="memoPic"/><h3>Memo's</h3>
-						<p id="memoText">Create/view general</p><p>memo's and or quick memo's.</p></a>
-					</li>
+					<div data-role="collapsible"data-iconpos="right">
+						<!--Browse About--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/QuestionMark.png" height="70px" width="50px" id="aboutPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>About</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="About, Different organizers, Information">
+							<p>
+								Full description about the application and it's features.
+							</p>
+						</li><a href="#about" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse College--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/College.png" height="70px" width="50px" id="collegePic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>College Organizer</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="Course information, Assignments, Events, Reminders, Todo List">
+							<p>
+								Create/view course information, and more.
+							</p>
+						</li><a href="#college" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse Work--> 		
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/Work.png" height="70px" width="50px" id="workPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>Work</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="Work, Appointments, Contacts, Hours, Reminders, Todo List">
+							<p>Create/view work related calendar's, reminders,todo lists, due dates, and more.</p>
+						</li><a href="#work" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse FamilyandPersonal--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/Family.png" height="70px" width="50" id="familyPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>Family and Personal</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List">
+							<p>Create/view all your calendar's related to your family such as birthdays,anniversaries, shopping list, and more.</p>
+						</li><a href="#familyAndPersonal" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse Memo's--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/Memo.png" height="70px" width="40" id="memoPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>Memo's</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="View Memos">
+							<p> Create/view general memo's and or quick memo's.</p>
+						</li><a href="#underConstruction" data-role="button">Details</a>
+					</div>
 				</div>
 			</div>
 			<div data-role="footer">
@@ -68,8 +125,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week1/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkToOtherApp">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -87,8 +144,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week1/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkToOtherApp">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -127,8 +184,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week1/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkToOtherApp">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -168,13 +225,13 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week1/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkToOtherApp">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<!--Family/Personal Page One Window Drilldown Links--> 
+		<!--Family and Personal Page One Window Drilldown Links--> 
 		<div data-role="page" id="familyAndpersonal" data-add-back-btn="true">
 			<div data-role="header">
 				<!--Header-->
@@ -204,8 +261,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week1/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkToOtherApp">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -226,8 +283,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week1/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkToOtherApp">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -345,7 +402,7 @@
 
 			</div>
 		</div>
-	<!--Family/Personal Links Pages-->
+	<!--Family and Personal Links Pages-->
 		<!--Birthday/Anniversaries page-->
 		<div data-role="page" id="birthdays/anniversaries" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed">
