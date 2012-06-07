@@ -22,19 +22,10 @@
 	</head>
 	<body>
 		<!-- This is the first page -->
-	    <div data-role="page" data-filter="true" id="home">
+	    <div data-role="page" data-filter="true" id="home" data-url="index.html">
 			<div data-role="header" data-position="inline" data-fullscreen="true">
 				<!--Main header--> 
 				<h1>Organizer</h1>
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#underConstruction" id="navhome">Home</a></li>
-						<li><a href="#underConstruction" id="linkgh-pages">Branch</a></li>
-						<li><a href="#underConstruction" id="linkToOtherApp">Other</a></li>
-						<li><a href="#underConstruction" id="">--</a></li>
-					</ul>
-				</div>
 			</div>
 			<!--Content Section--> 
 			<div data-role="content">
@@ -63,13 +54,23 @@
 						<p id="workText">Create/view work related</p><p>calendar's, reminders,</p><p>todo lists, due dates,</p><p>and more.</p></a>
 					</li>
 					<!--Browse Family/Personal--> 
-					<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List"><a href="#family/personal"><img src="images/Family.png" id="familyPic"/><h3>Family/Personal</h3>
+					<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List"><a href="#familyAndpersonal"><img src="images/Family.png" id="familyPic"/><h3>Family/Personal</h3>
 						<p id="family/personalText">Create/view all your</p><p>calendar's related to your</p><p>family such as birthdays,</p><p>anniversaries, shopping</p><p>list, and more.</p></a>
 					</li>
 					<!--Browse Memo's--> 
 					<li data-filtertext="View Memos"><a href="#underConstruction" data-rel="dialog"><img src="images/Memo.png" id="memoPic"/><h3>Memo's</h3>
 						<p id="memoText">Create/view general</p><p>memo's and or quick memo's.</p></a>
 					</li>
+				</div>
+			</div>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html/#home" id="navhome">Home</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkgh-pages">Online Page</a></li>
+						<li><a href="MIU/Week1/Bronze/index.html" id="linkToOtherApp">Bronze App</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -80,6 +81,16 @@
 			</div>
 			<div data-role="content">
 				<p id="aboutPage">The purpose of this application is to have a sense of balance for the typical college student between school, work, and personal activities. By using different types of methods suchs as calendar's, todo list, reminder, and more the student will be able to organize all activites on just one device.</p>
+			</div>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html/#home" id="navhome">Home</a></li>
+						<li><a href="#alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkgh-pages">Online Page</a></li>
+						<li><a href="#underConstruction" id="linkToOtherApp">Bronze App</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<!--College Page One Window Drilldown Links--> 
@@ -110,6 +121,16 @@
 						</a>
 					</li>
 				</ul>
+			</div>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html/#home" id="navhome">Home</a></li>
+						<li><a href="#alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkgh-pages">Online Page</a></li>
+						<li><a href="#underConstruction" id="linkToOtherApp">Bronze App</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<!--Work Page One Window Drilldown Links--> 
@@ -142,9 +163,19 @@
 					</li>
 				</ul>
 			</div>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html/#home" id="navhome">Home</a></li>
+						<li><a href="#alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkgh-pages">Online Page</a></li>
+						<li><a href="#underConstruction" id="linkToOtherApp">Bronze App</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		<!--Family/Personal Page One Window Drilldown Links--> 
-		<div data-role="page" id="family/personal" data-add-back-btn="true">
+		<div data-role="page" id="familyAndpersonal" data-add-back-btn="true">
 			<div data-role="header">
 				<!--Header-->
 				<h2>Categories</h2>
@@ -152,26 +183,31 @@
 			<div data-role="content">
 				<ul data-role="listview" data-filter="true" id="family/personalNestList" data-content-theme="g">
 					<li data-filter="Birthday, Anniversaries, Family, Friends, Lists"><a href="#underConstruction" data-rel="dialog"><h3>Birthday's/Anniversaries</h3>
-						<p id="birthdays/anniversariesText"> Add birthdays of your love ones and friends, can have lists of birthday's and anniversaries for example, one list of birthday's for family and one for friends. Also have a different list for anniversaries works the same as the birthday lists.</p>
-					</a>
+						<p id="birthdays/anniversariesText"> Add birthdays of your love ones and friends, can have lists of birthday's and anniversaries for example, one list of birthday's for family and one for friends. Also have a different list for anniversaries works the same as the birthday lists.</p></a>
 					</li>
-					<li data-filter><a href="#underConstruction" data-rel="dialog"><h3>Contacts</h3>
-						<p id="family/personalContactsText"> Add co-workers, clients, who ever on your own contacts list to store phone numbers, email, and more.</p>
-					</a>
+					<li data-filter="Add Friends, Family, Contact List, Numbers, Emails"><a href="#underConstruction" data-rel="dialog"><h3>Contacts</h3>
+						<p id="family/personalContactsText"> Add friends, family, who ever on your own contacts list to store phone numbers, email, and more.</p></a>
 					</li>
-					<li><a href="#underConstruction" data-rel="dialog"><h3>Journal</h3>
-						<p id="journalText"> Add/view your thoughts/ideas with the date recorded as well. Can be used as a diary and later be viewed or edited.</p>
-					</a>
+					<li data-filter="Add, View, Thoughts, Ideas, Diary, Journal"><a href="#underConstruction" data-rel="dialog"><h3>Journal</h3>
+						<p id="journalText"> Add/view your thoughts/ideas with the date recorded as well. Can be used as a diary and later be viewed or edited.</p></a>
 					</li>
-					<li><a href="#underConstruction" data-rel="dialog"><h3>Remiders</h3>
-						<p id="family/personalRemindersText">All your reminders related to work, such as reminders for meetings, projects, etc., will be in this section.</p>	
-						</a>
+					<li data-filter="Reminders, Kids, Appointments, Check List."><a href="#underConstruction" data-rel="dialog"><h3>Remiders</h3>
+						<p id="family/personalRemindersText">All your reminders related to your family and personal life, such as reminders for your kids baseball games, doctor appointments, etc., will be in this section.</p></a>
 					</li>
-					<li><a href="#underConstruction" data-rel="dialog"><h3>Todo List</h3>
-						<p id="shoppingList">All your todo's for your work life such as what you have to complete that day or whenever you desire will be created and stored in this section.</p>
-						</a>
+					<li data-filter=""><a href="#underConstruction" data-rel="dialog"><h3>Todo List</h3>
+						<p id="shoppingList">Create/view your shopping lists, have as many as you want, for example have one for the groceries, another for the kids birthday party, etc., all will be created and stored in this section.</p></a>
 					</li>
 				</ul>
+			</div>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html/#home" id="navhome">Home</a></li>
+						<li><a href="#alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkgh-pages">Online Page</a></li>
+						<li><a href="#underConstruction" id="linkToOtherApp">Bronze App</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	<!--Memo Page-->
@@ -184,6 +220,16 @@
 			</div>
 			<div data-role="content">
 
+			</div>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html/#home" id="navhome">Home</a></li>
+						<li><a href="#alexcherrera.github.com/MIU/Week2/Gold/index.html" id="linkgh-pages">Online Page</a></li>
+						<li><a href="#underConstruction" id="linkToOtherApp">Bronze App</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<!--College Pages-->
