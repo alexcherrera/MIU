@@ -1,0 +1,98 @@
+/*
+Alexander Herrera
+Project 2
+*/
+body h1 {
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	margin-left:10px;
+	padding: 5px;
+	border: 10px ridge #607B8B;
+	text-align: center;
+	background-color:#33A1DE;
+	color:#E9F5FB;
+}
+body article p {
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left:20px;
+	padding: 4px;
+	border: 4px solid black;
+	background-color: #8EA4B1;
+	font-style: normal; 
+	font-variant: normal;
+	font-weight: bold; 
+	font-family: "Times New Roman";
+}
+form fieldset #errorMessages {
+	color: red;
+	font-weight: bold;
+}
+h2 {
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+	margin-left:10px;
+	padding: 5px;
+	border: 6px ridge #8EA4B1;
+	text-align: left;
+	background-color: #33A1DE;	
+	color: #F0F3f5;
+}
+fieldset {
+	background-color: #8EA4B1;
+
+}
+legend h2{
+	padding: 4px;
+	color: #EBF5FA;
+}
+legend h3 {
+	margin-top:20px;
+}
+div ul li {
+	list-style-type: none;
+}
+p {
+	text-align: center;
+	font-style: normal; 
+	font-variant: normal;
+	font-weight: bold; 
+	font-family: "Times New Roman";
+}
+#courseName {
+	display: block;
+}
+#courseSection {
+	display: block;
+}
+#topicAndSection {
+	display: block;
+}
+#todaysDate {
+	display: block;
+}
+#dueDate {
+	display: block;
+}
+#noteSection {
+	display: block;
+}
+a {
+	margin-left: 5px;
+	border: 2px solid #000000;
+	padding: 2px;
+	color: #000000;
+	background-color: #BFCBD3;
+}
+#icon {
+	height: 50px;
+	border: 2px solid #000000;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 0px;
+	color: #000000;
+	background-color: #BFCBD3;
+}
