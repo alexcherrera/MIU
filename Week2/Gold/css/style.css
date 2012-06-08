@@ -2,7 +2,7 @@
 Alexander Herrera
 Project 2
 */
-body h1 {
+#qSHeader {
 	margin-top: 20px;
 	margin-right: 10px;
 	margin-bottom: 20px;
@@ -13,7 +13,8 @@ body h1 {
 	background-color:#33A1DE;
 	color:#E9F5FB;
 }
-body article p {
+
+p {
 	margin-top: 20px;
 	margin-right: 20px;
 	margin-bottom: 20px;
