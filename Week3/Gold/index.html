@@ -243,6 +243,7 @@
 				<div data-role="content">
 				<!--Form-->
 				<form action="" method="post" id="courseInfoForm">
+					<!--Department by Major Select Menu-->
 					<div data-role="fieldcontain">
 						<label for="courseDepartSelect">Department:</label>
 						<Select name="courseDepartSelect" id="courseDepartSelect"/>
@@ -264,11 +265,68 @@
 							</optgroup>
 						</select>
 					</div>
+					<!--Couse Name Input Field-->
+					<div data-role="fieldcontain">
+						<label for="courseName">Course Name:</label>
+						<input type="text" name="courseName" id="courseName"/>
+					</div>
+					<!--Couse Section Number Input Field-->
+					<div data-role="fieldcontain">
+						<label for="courseSectNum">Course Section Number:</label>
+						<input type="text" name="courseSectNum" id="courseSectNum"/>
+					</div>
+					<!--Couse Number of Credits Radio Selection-->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Number of Credits:</legend>
+							<!--1 Credit-->
+							<input type="radio" name="courseNumCredits" id="courseNumCredits1" value="courseNumCredits1" checked="checked"/>
+							<label for="courseNumCredits1">1 Credit</label>
+							<!--2 Credit-->
+							<input type="radio" name="courseNumCredits" id="courseNumCredits2" value="courseNumCredits2"/>
+							<label for="courseNumCredits2">2 Credit</label>
+							<!--3 Credit-->
+							<input type="radio" name="courseNumCredits" id="courseNumCredits3" value="courseNumCredits3"/>
+							<label for="courseNumCredits3">3 Credit</label>
+							<!--4 Credit-->
+							<input type="radio" name="courseNumCredits" id="courseNumCredits4" value="courseNumCredits4"/>
+							<label for="courseNumCredits4">4 Credit</label>
+						</fieldset>
+					</div>
+					<!--Teacher Contact Information-->
+					<div data-role="fieldcontain">
+						<!--Teacher Name Input Field-->
+						<label for="teacherName">Teacher Name:</label>
+						<input type="text" name="teacherName" id="teacherName"/>
+						<!--Teacher Email Address Input Field-->
+						<label for="teacherEmail">Teacher Email:</label>
+						<input type="text" name="teacherEmail" id="teacherEmail"/>
+						<!--Teacher Phone Number Input Field-->
+						<label for="teacherPhone">Teacher Phone Number:</label>
+						<input type="text" name="teacherPhone" id="teacherPhone"/>
+						<!--Best Method to Contact Teacher-->
+						<fieldset data-role="controlgroup">
+							<legend>Best Method To Get In Contact:</legend>
+							<!--Email Option-->
+							<input type="checkbox" value="sendEmail" name="bestMethodContact" id="sendEmail"/>
+							<label for="sendEmail">Email</label>
+							<!--Phone Number Option-->
+							<input type="checkbox" value="Phone" name="bestMethodContact" id="Phone"/>
+							<label for="Phone">Phone</label>
+							<!--Office Hours Option-->
+							<input type="checkbox" value="Office-Hours" name="bestMethodContact" id="Office-Hours"/>
+							<label for="Office-Hours">Office Hours</label>
+						</fieldset>
+					</div>
 
-					<label for="courseName">Course Name:</label>
-					<input type="select" name="courseName" id="courseName"/>
 
 
+
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Save Course" data-theme="b"/>
+					</div>
 				</form>
 					
 				</div>
