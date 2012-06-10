@@ -16,7 +16,6 @@
 		<title>College Organizer Launch Page</title>
 		<!--Link Sheets-->
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
-
 		<!--Modernizr-->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
@@ -105,7 +104,7 @@
 						<p id="courseInfoText">This calendar is designed mainly for a college student but can be used by everone. Record information about your course, such as your professor's name, start and last day of class, the time class starts and finsihes, and much more.</p>
 						</a>	
 					</li>
-					<li data-filtertext="Course, Assignments, Class, Notes"><a href="#underConstruction" data-rel="dialog"><h3>Course Assignment</h3>
+					<li data-filtertext="Course, Assignments, Class, Notes"><a href="#courseAssignments" data-rel="dialog"><h3>Course Assignment</h3>
 						<p id="courseAssignText">Now you have the ability to add asignments for each class, add when recieved, when the due date is, notes, and more.</p>
 						</a>
 					</li>
@@ -242,93 +241,99 @@
 				</div>
 				<div data-role="content">
 				<!--Form-->
-				<form action="" method="post" id="courseInfoForm">
-					<!--Department by Major Select Menu-->
-					<div data-role="fieldcontain">
-						<label for="courseDepartSelect">Department:</label>
-						<Select name="courseDepartSelect" id="courseDepartSelect"/>
-								<option value="choose">--Choose a Majar--</option>
-							<optgroup label="College Of Architecture">
-								<option value="Architecture">Architecture</option>
-							</optgroup>
-							<optgroup label="Institute Of Arts And Sciences">
-								<option value="Biology">Biology</option>
-								<option value="Mathematics">Mathematics</option>
-							</optgroup>
-							<optgroup label="Academy Of Business">
-								<option value="Accounting">Accounting</option>	
-								<option value="Economics">Economics</option>	
-							</optgroup>
-							<optgroup label="Sciences of Engineering Institute">
-								<option value="Computer Engineering">Computer Engineering</option>	
-								<option value="Electrical Engineering">Electrical Engineering</option>
-							</optgroup>
-						</select>
-					</div>
-					<!--Couse Name Input Field-->
-					<div data-role="fieldcontain">
-						<label for="courseName">Course Name:</label>
-						<input type="text" name="courseName" id="courseName"/>
-					</div>
-					<!--Couse Section Number Input Field-->
-					<div data-role="fieldcontain">
-						<label for="courseSectNum">Course Section Number:</label>
-						<input type="text" name="courseSectNum" id="courseSectNum"/>
-					</div>
-					<!--Couse Number of Credits Radio Selection-->
-					<div data-role="fieldcontain">
-						<fieldset data-role="controlgroup">
-							<legend>Number of Credits:</legend>
-							<!--1 Credit-->
-							<input type="radio" name="courseNumCredits" id="courseNumCredits1" value="courseNumCredits1" checked="checked"/>
-							<label for="courseNumCredits1">1 Credit</label>
-							<!--2 Credit-->
-							<input type="radio" name="courseNumCredits" id="courseNumCredits2" value="courseNumCredits2"/>
-							<label for="courseNumCredits2">2 Credit</label>
-							<!--3 Credit-->
-							<input type="radio" name="courseNumCredits" id="courseNumCredits3" value="courseNumCredits3"/>
-							<label for="courseNumCredits3">3 Credit</label>
-							<!--4 Credit-->
-							<input type="radio" name="courseNumCredits" id="courseNumCredits4" value="courseNumCredits4"/>
-							<label for="courseNumCredits4">4 Credit</label>
-						</fieldset>
-					</div>
-					<!--Teacher Contact Information-->
-					<div data-role="fieldcontain">
-						<!--Teacher Name Input Field-->
-						<label for="teacherName">Teacher Name:</label>
-						<input type="text" name="teacherName" id="teacherName"/>
-						<!--Teacher Email Address Input Field-->
-						<label for="teacherEmail">Teacher Email:</label>
-						<input type="text" name="teacherEmail" id="teacherEmail"/>
-						<!--Teacher Phone Number Input Field-->
-						<label for="teacherPhone">Teacher Phone Number:</label>
-						<input type="text" name="teacherPhone" id="teacherPhone"/>
-						<!--Best Method to Contact Teacher-->
-						<fieldset data-role="controlgroup">
-							<legend>Best Method To Get In Contact:</legend>
-							<!--Email Option-->
-							<input type="checkbox" value="sendEmail" name="bestMethodContact" id="sendEmail"/>
-							<label for="sendEmail">Email</label>
-							<!--Phone Number Option-->
-							<input type="checkbox" value="Phone" name="bestMethodContact" id="Phone"/>
-							<label for="Phone">Phone</label>
-							<!--Office Hours Option-->
-							<input type="checkbox" value="Office-Hours" name="bestMethodContact" id="Office-Hours"/>
-							<label for="Office-Hours">Office Hours</label>
-						</fieldset>
-					</div>
+					<form action="" method="post" id="courseInfoForm">
+						<!--Department by Major Select Menu-->
+						<div data-role="fieldcontain">
+							<label for="courseDepartSelect">Department:</label>
+							<Select name="courseDepartSelect" id="courseDepartSelect" data-native-menu="false">
+								<option data-placeholder="true">--Choose a Majar--</option>
+								<optgroup label="College Of Architecture">
+									<option value="Architecture">Architecture</option>
+								</optgroup>
+								<optgroup label="Institute Of Arts And Sciences">
+									<option value="Biology">Biology</option>
+									<option value="Mathematics">Mathematics</option>
+								</optgroup>
+								<optgroup label="Academy Of Business">
+									<option value="Accounting">Accounting</option>	
+									<option value="Economics">Economics</option>	
+								</optgroup>
+								<optgroup label="Sciences of Engineering Institute">
+									<option value="Computer Engineering">Computer Engineering</option>	
+									<option value="Electrical Engineering">Electrical Engineering</option>
+								</optgroup>
+							</select>
+						</div>
+						<!--Course Name Input Field-->
+						<div data-role="fieldcontain">
+							<label for="courseName">Course Name:</label>
+							<input type="text" name="courseName" id="courseName"/>
+						</div>
+						<!--Course Section Number Input Field-->
+						<div data-role="fieldcontain">
+							<label for="courseSectNum">Course Section Number:</label>
+							<input type="text" name="courseSectNum" id="courseSectNum"/>
+						</div>
+						<!--Course Number of Credits Radio Selection-->
+						<div data-role="fieldcontain">
+							<fieldset data-role="controlgroup">
+								<legend>Number of Credits:</legend>
+								<!--1 Credit-->
+								<input type="radio" name="courseNumCredits" id="courseNumCredits1" value="courseNumCredits1"/>
+								<label for="courseNumCredits1">1 Credit</label>
+								<!--2 Credit-->
+								<input type="radio" name="courseNumCredits" id="courseNumCredits2" value="courseNumCredits2"/>
+								<label for="courseNumCredits2">2 Credit</label>
+								<!--3 Credit-->
+								<input type="radio" name="courseNumCredits" id="courseNumCredits3" value="courseNumCredits3" checked="checked"/>
+								<label for="courseNumCredits3">3 Credit</label>
+								<!--4 Credit-->
+								<input type="radio" name="courseNumCredits" id="courseNumCredits4" value="courseNumCredits4"/>
+								<label for="courseNumCredits4">4 Credit</label>
+							</fieldset>
+						</div>
 
-
-
-
-					<!--Reset and Submit Field-->
-					<div data-role="fieldcontain">
-						<input type="reset" value="Reset" data-theme="a"/>
-						<input type="submit" value="Save Course" data-theme="b"/>
-					</div>
-				</form>
-					
+						<!--Teacher Contact Information-->
+						<div data-role="fieldcontain">
+							<!--Teacher Name Input Field-->
+							<label for="teacherName">Teacher Name:</label>
+							<input type="text" name="teacherName" id="teacherName"/>
+							<!--Teacher Email Address Input Field-->
+							<label for="teacherEmail">Teacher Email:</label>
+							<input type="text" name="teacherEmail" id="teacherEmail"/>
+							<!--Teacher Phone Number Input Field-->
+							<label for="teacherPhone">Teacher Phone Number:</label>
+							<input type="text" name="teacherPhone" id="teacherPhone"/>
+							<!--Best Method to Contact Teacher-->
+							<fieldset data-role="controlgroup">
+								<legend>Best Method To Get In Contact:</legend>
+								<!--Email Option-->
+								<input type="checkbox" value="sendEmail" name="bestMethodContact" id="sendEmail" checked="checked"/>
+								<label for="sendEmail">Email</label>
+								<!--Phone Number Option-->
+								<input type="checkbox" value="Phone" name="bestMethodContact" id="Phone"/>
+								<label for="Phone">Phone</label>
+								<!--Office Hours Option-->
+								<input type="checkbox" value="Office-Hours" name="bestMethodContact" id="Office-Hours"/>
+								<label for="Office-Hours">Office Hours</label>
+							</fieldset>
+						</div>
+						<!--Date Input Field-->
+						<div data-role="fieldcontain">
+						<!--Start Date Input Field-->	
+							<label>Start Date:</label>
+							<input id="startDate" type="date" name="startDate"/>
+						</div>
+						<!--Last Date Input Field-->
+							<label>Finish Date:</label>
+							<input id="finishDate" type="date" name="finishDate"/>
+						</div>
+						<!--Reset and Submit Field-->
+						<div data-role="fieldcontain">
+							<input type="reset" value="Reset" data-theme="a"/>
+							<input type="submit" value="Add Course" data-theme="b"/>
+						</div>
+					</form>	
 				</div>
 			</div>
 			<!--Course Assignments page--> 
@@ -339,7 +344,49 @@
 				
 				</div>
 				<div data-role="content">
-
+					<!--Form-->
+					<form action="" method="post" id="courseAssignForm">
+						<!--Course Name Input Field-->
+						<div data-role="fieldcontain">
+							<label for="courseName">Course Name:</label>
+							<input type="text" name="courseName" id="courseName"/>
+						</div>
+						<!--Received Date of Assignment-->
+						<div data-role="fieldcontain">
+							<label for="receivedAssignDate">Received Date of Assignment:</label>
+							<input type="date" name="receivedAssignDate" id="receivedAssignDate"/>
+						</div>
+						<!--Due Date of Assignment-->
+						<div data-role="fieldcontain">
+							<label for="dueAssignDate">Received Date of Assignment:</label>
+							<input type="date" name="dueAssignDate" id="dueAssignDate"/>
+						</div>
+						<!--Topic and Section Assignment Input Field-->
+						<div data-role="fieldcontain">
+							<label for="topicAndSec">Topic and Section:</label>
+							<input type="text" name="topicAndSec" id="topicAndSec"/>
+						</div>
+						<!--Method of Turning in Assignment Toggle Switch-->
+						<div data-role="fieldcontain">
+							<div class="containing-element">
+								<label for="turnInMethod">Method of submitting Assignment:</label>
+								<select data-role="slider">
+									<option value="sendEmailed">Email Assignment</option>
+									<option value="inPerson">In Person </option>
+								</select>
+							</div>
+						</div>
+						<!--Notes About Assignment Text Area-->
+						<div data-role="fieldcontain">
+							<label for="topicAndSec">Notes:</label>
+							<textarea name"topicAndSec" id="topicAndSec"></textarea>
+						</div>
+						<!--Reset and Submit Field-->
+						<div data-role="fieldcontain">
+							<input type="reset" value="Reset" data-theme="a"/>
+							<input type="submit" value="Add Course" data-theme="b"/>
+						</div>
+					</form>
 				</div>
 			</div>
 			<!--Events page--> 
@@ -501,5 +548,6 @@
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		<script src="js/main.js" type="text/javascript" ></script>
 		<script src="js/json.js" type="text/javascript"></script>
+
 	</body>
 </html>
