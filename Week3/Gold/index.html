@@ -715,11 +715,11 @@
 					<!--New Contact Information Name Input Fields-->
 					<div data-role="fieldcontain">
 						<!--First Name Input Field-->
-						<label for="firstNameCont">Appointment Location:</label>
+						<label for="firstNameCont">First Name:</label>
 						<input type="text" name="firstNameCont" id="firstNameCont"/>
 						<!--Last Name Input Field-->
-						<label for="firstNameCont">Appointment Location:</label>
-						<input type="text" name="firstNameCont" id="firstNameCont"/>
+						<label for="lastNameCont">Last Name:</label>
+						<input type="text" name="lastNameCont" id="lastNameCont"/>
 					</div>
 					<!--New Contact Information Method of Communication-->
 					<div data-role="fieldcontain">
@@ -769,47 +769,47 @@
 			</div>
 			<div data-role="content">
 				<form action="" method="post" id="workReminderForm">
-						<!--Reminder Title Input Field-->
-						<div data-role="fieldcontain">
-							<label for="workReminTitle">Title:</label>
-							<input type="text" name="workReminTitle" id="workReminTitle"/>
+					<!--Reminder Title Input Field-->
+					<div data-role="fieldcontain">
+						<label for="workReminTitle">Title:</label>
+						<input type="text" name="workReminTitle" id="workReminTitle"/>
+					</div>
+					<!--Priority Level Radio Option--> 
+					<div data-role="fieldcontain">	
+						<fieldset data-role="controlgroup">
+							<legend>Priority Level:</legend>
+							<!--High Priority Level--> 
+							<input type="radio" name="priorityLvl" id="high" value="hight" checked="checked"/>
+							<label for="high">High</label>
+							<!--Medium Priority Level--> 
+							<input type="radio" name="priorityLvl" id="medium" value="medium"/>
+							<label for="medium">Medium</label>
+							<!--Low Priority Level--> 
+							<input type="radio" name="priorityLvl" id="low" value="low"/>
+							<label for="low">Low</label>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<!--Set Date Toggle Switch-->
+						<div class="containing-element">
+							<label for="setDate">Set Date:</label>
+							<select data-role="slider">
+								<option value="off">No</option>
+								<option value="on">Yes</option>
+							</select>
 						</div>
-						<!--Priority Level Radio Option--> 
-						<div data-role="fieldcontain">	
-							<fieldset data-role="controlgroup">
-								<legend>Priority Level:</legend>
-								<!--High Priority Level--> 
-								<input type="radio" name="priorityLvl" id="high" value="hight" checked="checked"/>
-								<label for="high">High</label>
-								<!--Medium Priority Level--> 
-								<input type="radio" name="priorityLvl" id="medium" value="medium"/>
-								<label for="medium">Medium</label>
-								<!--Low Priority Level--> 
-								<input type="radio" name="priorityLvl" id="low" value="low"/>
-								<label for="low">Low</label>
-							</fieldset>
-						</div>
-						<div data-role="fieldcontain">
-							<!--Set Date Toggle Switch-->
-							<div class="containing-element">
-								<label for="setDate">Set Date:</label>
-								<select data-role="slider">
-									<option value="off">No</option>
-									<option value="on">Yes</option>
-								</select>
-							</div>
-						</div>
-						<div data-role="fieldcontain">
-							<!--Enter Reminder in Text Area-->
-							<label for="workReminder">Notes:</label>
-							<textarea name="workReminder" id="workReminder"></textarea>
-						</div>
-						<!--Reset and Submit Field-->
-						<div data-role="fieldcontain">
-							<input type="reset" value="Reset" data-theme="a"/>
-							<input type="submit" value="Add Course" data-theme="b"/>
-						</div>
-					</form>
+					</div>
+					<div data-role="fieldcontain">
+						<!--Enter Reminder in Text Area-->
+						<label for="workReminder">Notes:</label>
+						<textarea name="workReminder" id="workReminder"></textarea>
+					</div>
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Add Course" data-theme="b"/>
+					</div>
+				</form>
 			</div>
 		</div>
 		<!--Todo List page-->
@@ -858,8 +858,8 @@
 						</div>
 						<div data-role="fieldcontain">
 							<!--Enter Todo List in Text Area-->
-							<label for="collegeTodoLiTextA">Notes:</label>
-							<textarea name="collegeTodoLiTextA" id="collegeTodoLiTextA"></textarea>
+							<label for="workTodoLiTextA">Notes:</label>
+							<textarea name="workTodoLiTextA" id="workTodoLiTextA"></textarea>
 						</div>
 						<!--Reset and Submit Field-->
 						<div data-role="fieldcontain">
@@ -874,11 +874,46 @@
 		<div data-role="page" id="birthdays/anniversaries" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed">
 				<!--Main header--> 
-				<h1>Birthday's/Anniversaries</h1>
+				<h1>Birthday's and Anniversaries</h1>
 			
 			</div>
 			<div data-role="content">
-
+				<form action="" method="post" id="birthAnniverForm">
+					<!--Birthday Section-->
+					<div data-role="fieldcontain">
+						<!--Name Input Field-->
+						<label for="birthdayName">Name:</label>
+						<input type="text" name="birthdayName" id="birthdayName"/>
+						<!--How Old the Individual is turning Input Field-->
+						<label for="birthdayNewAge">How Old is the individual going to be?</label>
+						<input type="number" name="birthdayNewAge" id="birthdayNewAge"/>
+						<!--Date of Birthday Input Field-->
+						<label for="birthdayDate">Name:</label>
+						<input type="date" name="birthdayDate" id="birthdayDate"/>
+					</div>
+					<!--Anniversary Section-->
+					<div data-role="fieldcontain">
+						<!--Who's Anniversary Input Field-->
+						<label for="whoAnnivText">Name:</label>
+						<input type="text" name="whoAnnivText" id="whoAnnivText"/>
+						<!--How many years Input Field-->
+						<label for="manyYearsBeen">Number of years together:</label>
+						<input type="number" name="manyYearsBeen" id="manyYearsBeen"/>
+						<!--Date of Anniversary Input Field-->
+						<label for="annivDate">Date:</label>
+						<input type="date" name="annivDate" id="annivDate"/>
+					</div>
+					<!--Enter Note List in Text Area-->
+					<div data-role="fieldcontain">
+						<label for="noteTextAre">Notes:</label>
+						<textarea name="noteTextAre" id="noteTextAre"></textarea>
+					</div>
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Add Course" data-theme="b"/>
+					</div>
+				</form>
 			</div>
 		</div>
 		<!--Contacts page-->
@@ -889,7 +924,41 @@
 			
 			</div>
 			<div data-role="content">
-
+				<div data-role="content">
+				<form action="" method="post" id="famPerContForm">
+					<!--New Contact Information Name Input Fields-->
+					<div data-role="fieldcontain">
+						<!--First Name Input Field-->
+						<label for="firstNameContFamPer">First Name:</label>
+						<input type="text" name="firstNameContFamPer" id="firstNameContFamPer"/>
+						<!--Last Name Input Field-->
+						<label for="lastNameContFamPer">Last Name:</label>
+						<input type="text" name="lastNameContFamPer" id="lastNameContFamPer"/>
+					</div>
+					<!--New Contact Information Method of Communication-->
+					<div data-role="fieldcontain">
+						<!--Email Address Information-->
+						<label for="emailContFamPer">Email Address:</label>
+						<input type="text" name="emailContFamPer" id="emailContFamPer"/>
+						<!--Phone Number Information-->
+						<label for="phoneNumContFamPer">Phone Number:</label>
+						<input type="text" name="phoneNumContFamPer" id="phoneNumContFamPer"/>
+						<!--Local Address Information-->
+						<label for="localAddrContFamPer">Local Address:</label>
+						<input type="text" name="localAddrContFamPer" id="localAddrContFamPer"/>
+					</div>
+					<!--Note Section-->
+					<div data-role="fieldcontain">
+						<!--Enter Note:-->
+						<label for="contTextAFamPer">Notes:</label>
+						<textarea name="contTextAFamPer" id="contTextAFamPer"></textarea>
+					</div>
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Add Course" data-theme="b"/>
+					</div>
+				</form>	
 			</div>
 		</div>
 		<!--Journal page-->
@@ -900,7 +969,21 @@
 			
 			</div>
 			<div data-role="content">
-
+				<form action="" method="post" id="journalForm">
+					<div data-role="fieldcontain">
+						<label for="annivDate">Date:</label>
+						<input type="date" name="annivDate" id="annivDate"/>
+						</div>
+						<!--Journal Note Entry:-->
+						<label for="contTextAJour">Notes:</label>
+						<textarea name="contTextAJour" id="contTextAJour"></textarea>
+					</div>
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Add Course" data-theme="b"/>
+					</div>
+				</form>
 			</div>
 		</div>
 		<!--Reminders page-->
@@ -911,7 +994,48 @@
 			
 			</div>
 			<div data-role="content">
-
+				<form action="" method="post" id="workReminderForm">
+					<!--Reminder Title Input Field-->
+					<div data-role="fieldcontain">
+						<label for="famPerReminTitle">Title:</label>
+						<input type="text" name="famPerReminTitle" id="famPerReminTitle"/>
+					</div>
+					<!--Priority Level Radio Option--> 
+					<div data-role="fieldcontain">	
+						<fieldset data-role="controlgroup">
+							<legend>Priority Level:</legend>
+							<!--High Priority Level--> 
+							<input type="radio" name="priorityLvl" id="high" value="hight" checked="checked"/>
+							<label for="high">High</label>
+							<!--Medium Priority Level--> 
+							<input type="radio" name="priorityLvl" id="medium" value="medium"/>
+							<label for="medium">Medium</label>
+							<!--Low Priority Level--> 
+							<input type="radio" name="priorityLvl" id="low" value="low"/>
+							<label for="low">Low</label>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<!--Set Date Toggle Switch-->
+						<div class="containing-element">
+							<label for="setDate">Set Date:</label>
+							<select data-role="slider">
+								<option value="off">No</option>
+								<option value="on">Yes</option>
+							</select>
+						</div>
+					</div>
+					<div data-role="fieldcontain">
+						<!--Enter Reminder in Text Area-->
+						<label for="famPerReminder">Notes:</label>
+						<textarea name="famPerReminder" id="famPerReminder"></textarea>
+					</div>
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Add Course" data-theme="b"/>
+					</div>
+				</form>
 			</div>
 		</div>
 		<!--Shopping List page-->
