@@ -67,8 +67,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week3/Gold" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week3/Bronze/index.html">Bronze App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -541,7 +541,7 @@
 							<label for="reminTitle">Title:</label>
 							<input type="text" name="reminTitle" id="reminTitle"/>
 						</div>
-						<!--Priority Leve Radio Option--> 
+						<!--Priority Level Radio Option--> 
 						<div data-role="fieldcontain">	
 							<fieldset data-role="controlgroup">
 								<legend>Priority Level:</legend>
@@ -589,7 +589,7 @@
 				<div data-role="content">
 					<form action="" method="post" id="collegeTodoLiForm">
 						<!--Todo List Title Input Field-->
-						<div data-role="fieldcontain"
+						<div data-role="fieldcontain">
 							<label for="todoLiTitle">Title:</label>
 							<input type="text" name="todoLiTitle" id="todoLiTitle"/>
 							<!--Todo List Under Category Drop-down-->
@@ -632,6 +632,9 @@
 							<!--Set Due Date Input Field-->
 							<label for="todoLiDueDate">Event Time:</label>
 							<input type="time" name="todoLiDueDate" id="todoLiDueDate"/>
+							<!--Set Due Time Input Field-->
+							<label for="todoLiDueTime">Event Time:</label>
+							<input type="time" name="todoLiDueTime" id="todoLiDueTime"/>
 						</div>
 						<div data-role="fieldcontain">
 							<!--Enter Todo List in Text Area-->
@@ -752,7 +755,9 @@
 			
 			</div>
 			<div data-role="content">
+				<form action="" method="post" id="workHoursForm">
 
+				</form>
 			</div>
 		</div>
 		<!--Reminders page--> 
@@ -763,7 +768,48 @@
 			
 			</div>
 			<div data-role="content">
-
+				<form action="" method="post" id="workReminderForm">
+						<!--Reminder Title Input Field-->
+						<div data-role="fieldcontain">
+							<label for="workReminTitle">Title:</label>
+							<input type="text" name="workReminTitle" id="workReminTitle"/>
+						</div>
+						<!--Priority Level Radio Option--> 
+						<div data-role="fieldcontain">	
+							<fieldset data-role="controlgroup">
+								<legend>Priority Level:</legend>
+								<!--High Priority Level--> 
+								<input type="radio" name="priorityLvl" id="high" value="hight" checked="checked"/>
+								<label for="high">High</label>
+								<!--Medium Priority Level--> 
+								<input type="radio" name="priorityLvl" id="medium" value="medium"/>
+								<label for="medium">Medium</label>
+								<!--Low Priority Level--> 
+								<input type="radio" name="priorityLvl" id="low" value="low"/>
+								<label for="low">Low</label>
+							</fieldset>
+						</div>
+						<div data-role="fieldcontain">
+							<!--Set Date Toggle Switch-->
+							<div class="containing-element">
+								<label for="setDate">Set Date:</label>
+								<select data-role="slider">
+									<option value="off">No</option>
+									<option value="on">Yes</option>
+								</select>
+							</div>
+						</div>
+						<div data-role="fieldcontain">
+							<!--Enter Reminder in Text Area-->
+							<label for="workReminder">Notes:</label>
+							<textarea name="workReminder" id="workReminder"></textarea>
+						</div>
+						<!--Reset and Submit Field-->
+						<div data-role="fieldcontain">
+							<input type="reset" value="Reset" data-theme="a"/>
+							<input type="submit" value="Add Course" data-theme="b"/>
+						</div>
+					</form>
 			</div>
 		</div>
 		<!--Todo List page-->
@@ -774,7 +820,53 @@
 			
 			</div>
 			<div data-role="content">
-
+				<form action="" method="post" id="workTodoLiForm">
+						<!--Todo List Title Input Field-->
+						<div data-role="fieldcontain">
+							<label for="workTodoLiTitle">Title:</label>
+							<input type="text" name="workTodoLiTitle" id="workTodoLiTitle"/>
+							<!--Todo List Under Category Drop-down-->
+							<label for="workTodoLiSelect">Category:</label>
+							<Select name="workTodoLiSelect" id="workTodoLiSelect" data-native-menu="false">
+								<option value="chooseWorkTodoLiOpt">--Choose Category--</option>
+								<!--Options-->
+								<optgroup label="Example Options">
+									<option value="cleanDesk">Clean Desk</option>
+									<option value="emails">Emails</option>
+									<option value="meeting">Meeting</option>
+									<option value="planning">Planning</option>
+									<option value="report">Report</option>
+									<option value="otherAcad">Other...</option>
+								</optgroup>
+							</select>
+						</div>
+						<div data-role="fieldcontain">
+							<!--Set Date Toggle Switch-->
+							<div class="containing-element">
+								<label for="setDate">Set Date:</label>
+								<select data-role="slider">
+									<option value="off">No</option>
+									<option value="on">Yes</option>
+								</select>
+							</div>
+							<!--Set Due Date Input Field-->
+							<label for="workTodoLiDueDate">Event Time:</label>
+							<input type="date" name="workTodoLiDueDate" id="workTodoLiDueDate"/>
+							<!--Set Due Time Input Field-->
+							<label for="workTodoLiDueTime">Event Time:</label>
+							<input type="time" name="workTodoLiDueTime" id="workTodoLiDueTime"/>
+						</div>
+						<div data-role="fieldcontain">
+							<!--Enter Todo List in Text Area-->
+							<label for="collegeTodoLiTextA">Notes:</label>
+							<textarea name="collegeTodoLiTextA" id="collegeTodoLiTextA"></textarea>
+						</div>
+						<!--Reset and Submit Field-->
+						<div data-role="fieldcontain">
+							<input type="reset" value="Reset" data-theme="a"/>
+							<input type="submit" value="Add Course" data-theme="b"/>
+						</div>
+					</form>
 			</div>
 		</div>
 	<!--Family/Personal Links Pages-->
