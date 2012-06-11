@@ -666,7 +666,7 @@
 							<option value="client">Client</option>
 							<option value="Co-worker">Co-worker</option>
 							<option value="meetings">Meetings</option>
-							<option value="doctor">doctor</option>
+							<option value="doctor">Doctor</option>
 							<option value="government">government</option>
 							<option value="internal">Internal</option>
 							<option value="other">Other...</option>	
@@ -708,7 +708,40 @@
 			
 			</div>
 			<div data-role="content">
-
+				<form action="" method="post" id="workContForm">
+					<!--New Contact Information Name Input Fields-->
+					<div data-role="fieldcontain">
+						<!--First Name Input Field-->
+						<label for="firstNameCont">Appointment Location:</label>
+						<input type="text" name="firstNameCont" id="firstNameCont"/>
+						<!--Last Name Input Field-->
+						<label for="firstNameCont">Appointment Location:</label>
+						<input type="text" name="firstNameCont" id="firstNameCont"/>
+					</div>
+					<!--New Contact Information Method of Communication-->
+					<div data-role="fieldcontain">
+						<!--Email Address Information-->
+						<label for="emailCont">Email Address:</label>
+						<input type="text" name="emailCont" id="emailCont"/>
+						<!--Phone Number Information-->
+						<label for="phoneNumCont">Phone Number:</label>
+						<input type="text" name="phoneNumCont" id="phoneNumCont"/>
+						<!--Local Address Information-->
+						<label for="localAddrCont">Local Address:</label>
+						<input type="text" name="localAddrCont" id="localAddrCont"/>
+					</div>
+					<!--Note Section-->
+					<div data-role="fieldcontain">
+						<!--Enter Note:-->
+						<label for="contTextA">Notes:</label>
+						<textarea name="contTextA" id="contTextA"></textarea>
+					</div>
+					<!--Reset and Submit Field-->
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" data-theme="a"/>
+						<input type="submit" value="Add Course" data-theme="b"/>
+					</div>
+				</form>	
 			</div>
 		</div>
 		<!--Hours page--> 
