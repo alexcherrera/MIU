@@ -1,10 +1,274 @@
 /*
 Alexander Herrera
-Project 2
+Project 3
 For the browser I used Google Chrome, Safari web inspector hardly worked
 */
 
+//This is for the index.html forms
+window.addEventListener("DOMContentLoaded", function() { 
+    console.log("working index");
+    prompt("hello");
+//Getting the elements by id.
+    function idTag (e) {
+        var tagId = document.getElementById(e);
+        return tagId;
+    }
+//Variables:    
+    var radioNumCreditsValue = "";
+    var checkContMethod = "";
+    var getErrorMessId = idTag('errorMessages');
+    var clearCInfo = idTag("clear");
+    var displayCInfo = idTag("display");
+    var save = idTag('submit');
+    var reset = idTag('reset');
 
+save.addEventListener("click", saveCInfoForm);
+reset.addEventListener("click", formReset);
+displayCInfo.addEventListener("click", displayCInfo);
+//To get the value of the Radio Selection.
+    function creditsValue () {
+        var radioChoice = idTag('courseInfoForm').courseNumCredits;
+        for (var r = 0; radioChoice.length; r++) {
+            if (radioChoice[r].checked) {
+                radioNumCreditsValue = radioChoice[r].value;
+            }
+        }
+    }
+//To get the value of the Check selection field.
+    function contactMethod () {
+        if (idTag('sendEmail').checked) {
+            checkContMethod = idTag('sendEmail').value;
+        } else {
+            checkContMethod = "No";
+        }
+    }
+//Save form:    
+    function saveCInfoForm () {
+        if (!key) {
+            var id = Math.floor(Math.random()*10001910201);
+        } else {
+            id = key
+        }
+
+        //Create an Object, which will get the information from the user 
+        //input or from a dummy JSON file.
+        contactMethod();
+        var cInfo = {};
+            cInfo.depart        = ["Department:", idTag('courseDepartSelect').value];
+            cInfo.courseName    = ["Course Name:", idTag('courseName').value];
+            cInfo.courseCredits = ["Number of Credits:", radioNumCreditsValue];
+            cInfo.teachName     = ["Teacher Name:", idTag('teacherName').value];
+            cInfo.teachEmailA   = ["Teacher Email Address:", idTag('teacherEmail').value];
+            cInfo.teachPhoneN   = ["Teacher Phone Number:", idTag('teacherPhone').value];
+            cInfo.bestMethod    = ["Best Method To Get in Contact:", checkContMethod];
+            cInfo.firstDay      = ["First Day of Class:", idTag('firstDay').value];
+            cInfo.lastDay       = ["Last Day of Class:", idTag('lastDay').value];
+            localStorage.setItem(id, JSON.stringify(cInfo));
+            alert("Course Information Saved!!");
+        
+    }
+//To validate the form to check for errors.
+    function validateField (evt) {
+        //Get the elements to be validated.
+        var emptyField = "";
+        var getDepart = idTag('selectMajor');
+        var getCourseName = idTag('courseName');
+        var getCourseCredits = idTag('courseSection');
+        var getTeachName  = idTag('topicAndSection');
+        var getTeachEmailA = idTag('todaysDate');
+        var getTeachPhoneN = idTag('dueDate');
+        var getBestMethod = idTag('noteSection'); 
+        var getFirstDay = idTag('firstDay');
+        var getLastDay = idTag('lastDay');
+        //To Reset the messages with errors when corrected. 
+        getErrorMessId.innerHTML = "";
+        getDepart.style.border = "1px solid black";
+        getCourseName.style.border = "1px solid black";
+        getCourseCredits.style.border = "1px solid black";
+        getTeachName.style.border = "1px solid black";
+        getTeachEmailA.style.border = "1px solid black";
+        getTeachPhoneN.style.border = "1px solid black";
+        getBestMethod.style.border = "1px solid black";
+        getFirstDay.style.border = "1px solid black";
+        getLastDay.style.border = "1px solid black";
+        //User to get error messages when field is not inputed correctly.
+        var errorMessArray = [];
+        //Major validation
+        if (getDepart.value === "--Choose Major--") {
+            var departErrorMess = "Please Choose a Major";
+            getDepart.style.border = "1px solid red";
+            errorMessArray.push(departErrorMess);
+        }
+        //Course Name validation
+        if (getCourseName.value === "") {
+                var courseNameErrorMess = "Please Enter the Course Name";
+                getCourseName.style.border = "1px solid red";
+                errorMessArray.push(courseNameErrorMess);
+        }
+        //Course Credits validation
+        if (getCourseCredits.value === "") {
+            var courseCreditsErrorMess = "Please Enter the Course Section";
+            getCourseCredits.style.border = "1px solid red";
+            errorMessArray.push(courseCreditsErrorMess);
+        }
+        //Teacher Name validation
+        if (getTeachName.value === "") {
+            var teachNameErrorMess = "Please Enter the Topic And Section";
+            getTeachName.style.border = "1px solid red";
+            errorMessArray.push(topicAndSecErrorMess); 
+        }
+        //Teacher Email Address validation
+        if (getTeachEmailA.value === "") {
+            var teachEmailAErrorMess = "Please Enter Today's Date";
+            getTeachEmailA.style.border = "1px solid red";
+            errorMessArray.push(teachEmailAErrorMess);
+        }
+        //Teacher Phone Number validation
+        if (getTeachPhoneN.value === "") {
+            var teachPhoneNErrorMess = "Please Enter the Due Date";
+            getTeachPhoneN.style.border = "1px solid red";
+            errorMessArray.push(teachPhoneNErrorMess); 
+        }
+        //Best Method validation
+        if (getBestMethod.value === "") {
+            var bestMethodErrorMess = "Please Enter a Note";
+            getBestMethod.style.border = "1px solid red";
+            errorMessArray.push(bestMethodErrorMess);
+        }
+        //First Day validation
+        if (getFirstDay.value === "") {
+            var firstDayErrorMess = "Please Enter a Note";
+            getFirstDay.style.border = "1px solid red";
+            errorMessArray.push(firstDayErrorMess);
+        }
+        //Last Day validation
+        if (getLastDay.value === "") {
+            var getLastDayErrorMess = "Please Enter a Note";
+            getLastDay.style.border = "1px solid red";
+            errorMessArray.push(getLastDayErrorMess);
+        }
+        //When an error has occured, each will be displayed on the screen.
+        if (errorMessArray.length >= 1) {
+            for (var i = 0, l = errorMessArray.length; i < l; i++) {
+                var errorTextList = makeTag('li');
+                errorTextList.innerHTML = errorMessArray[i];
+                getErrorMessId.appendChild(errorTextList);
+            }
+            //The preventDefault allows the error messages to display with the style features. 
+            evt.preventDefault();
+        } else {
+            //When their is no error's this function will run.
+            //Going to send the key value. This key has been passed through functions.
+            //Key was creating in the getInfoToDisplay function.
+            saveCInfoForm(this.key);
+        }
+    } 
+//Now to be able to display the form fields.
+    function visibilityOfElements (v) {
+        switch (v) {
+            case "on":
+                idTag('courseInfoForm').style.display = "none";
+                idTag('clearCInfo').style.display = "inline";
+                idTag('displayCInfo').style.display = "none";
+                idTag('addCInfo').style.display = "inline";
+                break;
+            case "off":
+                idTag('courseInfoForm').style.display = "block";
+                idTag('clearCInfo').style.display = "inline";
+                idTag('displayCInfo').style.display = "inline";
+                idTag('addCInfo').style.display = "none";
+                idTag('itemsCInfo').style.display = "none";
+        }
+    }
+//For the user to reset the form.
+    function formReset () {
+        window.location.clear();
+        window.location.reload();
+    }
+//Safety check.
+    function displayCheck () {
+        if (localStorage.length === 0){
+            alert("No Course Information have been saved!");
+        }
+    }    
+//Delete the information from the local Storage    
+    function eraseInformation () {
+        if (localStorage.length === 0){
+            alert("You haven't stored any Course Information!");
+        } else {
+            localStorage.clear();//Delete everything in the localStorage
+            alert("All of your Course Information have been deleted");
+            window.location.reload();
+            return false;//Stopping the link to go anywhere when reloaded
+        }
+    }
+//The event listener function to allow the user edit the form.
+    function editCInfo (s) {
+        var valueToEdit = localStorage.getItem(this.key);
+        var info = JSON.parse(valueToEdit);
+        visibilityOfElement("off");//Display the form.
+        idTag('courseDepartSelect').value = cInfo.depart[1];
+        idTag('courseName').value = cInfo.courseName[1];
+        var radioNumCredOpt = idTag("courseInfoForm").courseNumCredits;
+        for (var i = 0; i < radioCInfoOpt.length; i++) {
+            if (radioNumCredOpt[i].value == "courseNumCredits1" && cInfo.courseCredits[1] == "courseNumCredits1") {
+                radioNumCredOpt[i].setAttribute("checked", "checked");
+            } else if (radioNumCredOpt[i].value == "courseNumCredits2" && cInfo.courseCredits[1] == "courseNumCredits2"){
+                radioNumCredOpt[i].setAttribute("checked", "checked");
+            } else if (radioNumCredOpt[i].value == "courseNumCredits3" && cInfo.courseCredits[1] == "courseNumCredits3"){
+                radioNumCredOpt[i].setAttribute("checked", "checked");
+            } else if (radioNumCredOpt[i].value == "courseNumCredits4" && cInfo.courseCredits[1] == "courseNumCredits4"){
+                radioNumCredOpt[i].setAttribute("checked", "checked");
+            }
+        }
+        idTag('teacherName').value = cInfo.teachName[1];
+        idTag('teacherEmail').value = cInfo.teachEmailA[1];
+        idTag('teacherPhone').value = cInfo.teachPhoneN[1];
+        var checkBoxBestMethodOpt = idTag("collegeForm").turnin;
+        for (var i = 0; i < radioOption.length; i++) {
+            if (radioOption[i].value == "Email" && info.option[1] == "Email") {
+                radioOption[i].setAttribute("checked", "checked");
+            } else if (radioOption[i].value == "Person" && info.option[1] == "Person"){
+                radioOption[i].setAttribute("checked", "checked");
+            }
+        }
+        idTag('noteSection').value = info.note[1];
+        //Going to remove the event listener that is in the save variable.
+        save.removeEventListener("click", saveInformation);
+        //Change the button of submit to Edit Schedule.
+        idTag('submit').value = "Edit Schedule";
+        var editScheduleButton = idTag("submit");
+        editScheduleButton.addEventListener("click", validateField);
+        //Get the key from local storage
+        editScheduleButton.key = this.key;
+    }   
+//To get the information to display from localstorage.
+    function displayCInfo () {
+        visibilityOfElements("on");
+        displayCheck();
+        var getCInfoContentId = idTag('cInfoContent');
+        var createRoster = makeTag('ul');
+        getCInfoContentId.appendChild(createRoster);
+        idTag('itemsCInfo').style.display = "block";//Just to make sure it does display
+        for (var i = 0, w = localStorage.length; i < w; i++) {
+            var createFirstListTag = makeTag('li');
+            createRoster.appendChild(createFirstListTag);
+            var getKey = localStorage.key(i);
+            var keyValue = localStorage.getItem(getKey);
+            var localStorageObject = JSON.parse(keyValue);
+            var anotherUnorderListTag = makeTag('ul');
+            createFirstListTag.appendChild(anotherUnorderListTag);
+            for (var s in localStorageObject) {
+                var createAnotherList = makeTag('li');
+                anotherUnorderListTag.appendChild(createAnotherList);
+                var listInfoText = localStorageObject[s][0]+ " " + localStorageObject[s][1];
+                createAnotherList.innerHTML = listInfoText;
+            }
+        }
+    }
+
+});
+//This is for the additem.html form
 window.addEventListener("DOMContentLoaded", function () {
     console.log("working");
 //Getting the elements by id.
