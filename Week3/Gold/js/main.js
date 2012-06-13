@@ -5,26 +5,40 @@ For the browser I used Google Chrome, Safari web inspector hardly worked
 */
 
 //This is for the index.html forms
-window.addEventListener("DOMContentLoaded", function() { 
+document.getElementById('courseInformation').addEventListener("DOMContentLoaded", function() { 
     console.log("working index");
-    prompt("hello");
 //Getting the elements by id.
     function idTag (e) {
         var tagId = document.getElementById(e);
         return tagId;
     }
-//Variables:    
+    //Getting the elements by tag name.
+    function tagName (n) {
+        var nameOfTag = document.getElementsByTagName(n);
+        return nameOfTag;
+    }
+//Create an Element.
+    function makeTag (c) {
+        var createNewTag = document.createElement(c);
+        return createNewTag;
+    }
+//Variables:  
+    var departments = ["--Choose Major--", 
+                        "Architecture", 
+                        "Biology", 
+                        "Mathematics", 
+                        "Accounting",
+                        "Economics", 
+                        "Computer Engineering", 
+                        "Electrical Engineering"];  
     var radioNumCreditsValue = "";
     var checkContMethod = "";
-    var getErrorMessId = idTag('errorMessages');
-    var clearCInfo = idTag("clear");
-    var displayCInfo = idTag("display");
+    var radioNumCredOpt = "";
+    var getErrorMessId = idTag('errorMessCInfo');
+    var clearCInfo = idTag("clearCInfo");
+    var displayCInfo = idTag("displayCInfo");
     var save = idTag('submit');
     var reset = idTag('reset');
-
-save.addEventListener("click", saveCInfoForm);
-reset.addEventListener("click", formReset);
-displayCInfo.addEventListener("click", displayCInfo);
 //To get the value of the Radio Selection.
     function creditsValue () {
         var radioChoice = idTag('courseInfoForm').courseNumCredits;
@@ -41,17 +55,19 @@ displayCInfo.addEventListener("click", displayCInfo);
         } else {
             checkContMethod = "No";
         }
-    }
+    }    
 //Save form:    
-    function saveCInfoForm () {
+    function saveCInfoForm (key) {
+        var id = Math.floor(Math.random()*10001910201);
         if (!key) {
-            var id = Math.floor(Math.random()*10001910201);
+            id;
         } else {
-            id = key
+            id = key;
         }
 
         //Create an Object, which will get the information from the user 
         //input or from a dummy JSON file.
+        creditsValue();
         contactMethod();
         var cInfo = {};
             cInfo.depart        = ["Department:", idTag('courseDepartSelect').value];
@@ -67,6 +83,64 @@ displayCInfo.addEventListener("click", displayCInfo);
             alert("Course Information Saved!!");
         
     }
+//This function creates all the majors using the array variable of departments and then putting in the additem.html.
+    function createDepartList () {
+        var getCInfoForm = idTag("courseInfoForm");
+        var getDepartmentsId = idTag("courseDepartSelect");
+        var createSelectTag = makeTag("Select");
+        createSelectTag.setAttribute("id", "selectDepart");
+        for (var i = 0, l = departments.length; i < l; i++) {
+            var createOptionTag = makeTag("option");
+            var optionInArray = departments[i];
+            createOptionTag.setAttribute("value", optionInArray);
+            createOptionTag.innerHTML = optionInArray; 
+            createSelectTag.appendChild(createOptionTag);
+        }
+        getDepartmentsId.appendChild(createSelectTag);
+    }
+   createDepartList();    
+//Now to be able to display the form fields.
+    function visibilityOfElements (v) {
+        switch (v) {
+            case "on":
+                idTag('courseInfoForm').style.display = "none";
+                idTag('clearCInfo').style.display = "inline";
+                idTag('displayCInfo').style.display = "none";
+                idTag('addCInfo').style.display = "inline";
+                break;
+            case "off":
+                idTag('courseInfoForm').style.display = "block";
+                idTag('clearCInfo').style.display = "inline";
+                idTag('displayCInfo').style.display = "inline";
+                idTag('addCInfo').style.display = "none";
+                idTag('itemsCInfo').style.display = "none";
+        }
+    }
+//Delete the information from the local Storage    
+    function eraseInformation () {
+        if (localStorage.length === 0){
+            alert("You haven't stored any Course Information!");
+        } else {
+            localStorage.clear();//Delete everything in the localStorage
+            alert("All of your Course Information have been deleted");
+            window.location.reload();
+            return false;//Stopping the link to go anywhere when reloaded
+        }
+    }
+//Automatically fills in the form if empty as a default.
+//All the default information that is going to be display is coming from the json file.
+    function autoDefaultInfo () {
+        for (var d in jsonObjectCInfo) {
+            var defaultID = Math.floor(Math.random()*1010001921);
+            localStorage.setItem(defaultID, JSON.stringify(jsonObjectCInfo[d]));
+        }
+    }
+//Safety check.
+    function displayCheck () {
+        if (localStorage.length === 0){
+            alert("No Course Information have been saved!");
+        }
+    }  
 //To validate the form to check for errors.
     function validateField (evt) {
         //Get the elements to be validated.
@@ -115,7 +189,7 @@ displayCInfo.addEventListener("click", displayCInfo);
         if (getTeachName.value === "") {
             var teachNameErrorMess = "Please Enter the Topic And Section";
             getTeachName.style.border = "1px solid red";
-            errorMessArray.push(topicAndSecErrorMess); 
+            errorMessArray.push(teachNameErrorMess); 
         }
         //Teacher Email Address validation
         if (getTeachEmailA.value === "") {
@@ -162,93 +236,92 @@ displayCInfo.addEventListener("click", displayCInfo);
             //Key was creating in the getInfoToDisplay function.
             saveCInfoForm(this.key);
         }
-    } 
-//Now to be able to display the form fields.
-    function visibilityOfElements (v) {
-        switch (v) {
-            case "on":
-                idTag('courseInfoForm').style.display = "none";
-                idTag('clearCInfo').style.display = "inline";
-                idTag('displayCInfo').style.display = "none";
-                idTag('addCInfo').style.display = "inline";
-                break;
-            case "off":
-                idTag('courseInfoForm').style.display = "block";
-                idTag('clearCInfo').style.display = "inline";
-                idTag('displayCInfo').style.display = "inline";
-                idTag('addCInfo').style.display = "none";
-                idTag('itemsCInfo').style.display = "none";
-        }
-    }
-//For the user to reset the form.
-    function formReset () {
-        window.location.clear();
-        window.location.reload();
-    }
-//Safety check.
-    function displayCheck () {
-        if (localStorage.length === 0){
-            alert("No Course Information have been saved!");
-        }
-    }    
-//Delete the information from the local Storage    
-    function eraseInformation () {
-        if (localStorage.length === 0){
-            alert("You haven't stored any Course Information!");
-        } else {
-            localStorage.clear();//Delete everything in the localStorage
-            alert("All of your Course Information have been deleted");
-            window.location.reload();
-            return false;//Stopping the link to go anywhere when reloaded
-        }
     }
 //The event listener function to allow the user edit the form.
-    function editCInfo (s) {
+    function editCourse (s) {
         var valueToEdit = localStorage.getItem(this.key);
         var info = JSON.parse(valueToEdit);
-        visibilityOfElement("off");//Display the form.
-        idTag('courseDepartSelect').value = cInfo.depart[1];
+        visibilityOfElements("off");//Display the form.
+        idTag('selectDepart').value = cInfo.depart[1];
         idTag('courseName').value = cInfo.courseName[1];
-        var radioNumCredOpt = idTag("courseInfoForm").courseNumCredits;
-        for (var i = 0; i < radioCInfoOpt.length; i++) {
+        radioNumCredOpt = idTag("courseInfoForm").courseNumCredits;
+        for (var i = 0; i < radioNumCredOpt.length; i++) {
             if (radioNumCredOpt[i].value == "courseNumCredits1" && cInfo.courseCredits[1] == "courseNumCredits1") {
                 radioNumCredOpt[i].setAttribute("checked", "checked");
-            } else if (radioNumCredOpt[i].value == "courseNumCredits2" && cInfo.courseCredits[1] == "courseNumCredits2"){
+            } else if (radioNumCredOpt[i].value == "courseNumCredits2" && cInfo.courseCredits[1] == "courseNumCredits2") {
                 radioNumCredOpt[i].setAttribute("checked", "checked");
-            } else if (radioNumCredOpt[i].value == "courseNumCredits3" && cInfo.courseCredits[1] == "courseNumCredits3"){
+            } else if (radioNumCredOpt[i].value == "courseNumCredits3" && cInfo.courseCredits[1] == "courseNumCredits3") {
                 radioNumCredOpt[i].setAttribute("checked", "checked");
-            } else if (radioNumCredOpt[i].value == "courseNumCredits4" && cInfo.courseCredits[1] == "courseNumCredits4"){
+            } else if (radioNumCredOpt[i].value == "courseNumCredits4" && cInfo.courseCredits[1] == "courseNumCredits4") {
                 radioNumCredOpt[i].setAttribute("checked", "checked");
             }
         }
         idTag('teacherName').value = cInfo.teachName[1];
         idTag('teacherEmail').value = cInfo.teachEmailA[1];
         idTag('teacherPhone').value = cInfo.teachPhoneN[1];
-        var checkBoxBestMethodOpt = idTag("collegeForm").turnin;
-        for (var i = 0; i < radioOption.length; i++) {
-            if (radioOption[i].value == "Email" && info.option[1] == "Email") {
-                radioOption[i].setAttribute("checked", "checked");
-            } else if (radioOption[i].value == "Person" && info.option[1] == "Person"){
-                radioOption[i].setAttribute("checked", "checked");
+        var checkOptBestMethod = idTag("courseInfoForm").bestMethodContact;
+        for (var c = 0; c < checkOptBestMethod.length; c++) {
+            if (checkOptBestMethod[c].value == "sendEmail" && cInfo.bestMethod[1] == "sendEmail") {
+                checkOptBestMethod[c].setAttribute("checked", "checked");
+            } else if (checkOptBestMethod[c].value == "phone" && cInfo.bestMethod[1] == "phone") {
+                checkOptBestMethod[c].setAttribute("checked", "checked");
+            } else if (checkOptBestMethod[c].value == "Office-Hours" && cInfo.bestMethod[1] == "Office-Hours") {
+                checkOptBestMethod[c].setAttribute("checked", "checked");
             }
         }
-        idTag('noteSection').value = info.note[1];
+        idTag('firstDay').value = cInfo.firstDay [1];
+        idTag('lastDay').value = cInfo.lastDay [1];
         //Going to remove the event listener that is in the save variable.
-        save.removeEventListener("click", saveInformation);
+        save.removeEventListener("click", saveCInfoForm);
         //Change the button of submit to Edit Schedule.
-        idTag('submit').value = "Edit Schedule";
-        var editScheduleButton = idTag("submit");
-        editScheduleButton.addEventListener("click", validateField);
+        idTag('submit').value = "Edit Course";
+        var editCourseButton = idTag("submit");
+        editCourseButton.addEventListener("click", validateField);
         //Get the key from local storage
-        editScheduleButton.key = this.key;
-    }   
+        editCourseButton.key = this.key;
+    }  
+//Create Edit Link to change information that is in the local storage.
+    function createEditLink (key, eLink) {
+        var linkEdit = makeTag('a');
+        linkEdit.href = '#';
+        linkEdit.id = 'editC';
+        linkEdit.key = key;
+        var textEdit = "Edit Course";
+        linkEdit.addEventListener("click", editCourse);
+        linkEdit.innerHTML = textEdit;
+        eLink.appendChild(linkEdit);
+    }
+//Create Delete Link to erase items in the local storage.
+    function createDeleteLink(key, dLink) {
+        var linkDelete = makeTag('a');
+        linkDelete.href = '#';
+        linkDelete.id = 'deleteC';
+        linkDelete.key = key;
+        var textDelete = "Delete Course";
+        linkDelete.addEventListener("click", deleteCourse);
+        linkDelete.innerHTML = textDelete;
+        dLink.appendChild(linkDelete);
+    }
+//The event listener function for the user to delete.
+    function deleteCourse () {
+        var askToDelete = confirm("Please confirm if you want to delete this Course?");
+        if (askToDelete) {
+            localStorage.removeItem(this.key);
+            alert("Course was deleted");
+            window.location.reload();
+        } else {
+            alert("The Course was not deleted");
+        }
+    }  
 //To get the information to display from localstorage.
     function displayCInfo () {
         visibilityOfElements("on");
         displayCheck();
-        var getCInfoContentId = idTag('cInfoContent');
+        var createDiv = makeTag('div');
+        createDiv.setAttribute("id", "itemsCInfo");
         var createRoster = makeTag('ul');
-        getCInfoContentId.appendChild(createRoster);
+        createDiv.appendChild(createRoster);
+        idTag('itemsCInfoContainer').appendChild(createDiv);
         idTag('itemsCInfo').style.display = "block";//Just to make sure it does display
         for (var i = 0, w = localStorage.length; i < w; i++) {
             var createFirstListTag = makeTag('li');
@@ -264,8 +337,23 @@ displayCInfo.addEventListener("click", displayCInfo);
                 var listInfoText = localStorageObject[s][0]+ " " + localStorageObject[s][1];
                 createAnotherList.innerHTML = listInfoText;
             }
+            createEditLink(localStorage.key(i), createListLinks);//Calling the function that will only have the edit link for the user to make corrections in the local storage.
+            createDeleteLink(localStorage.key(i), createListLinks);//Calling the function that will only have the delete link.
         }
+         var breakTag = makeTag('br');
+        breakTag.innerHTML = createDiv;
     }
+//For the user to reset the form.
+    function formReset () {
+        window.location.clear();
+        window.location.reload();
+    }
+    
+save.addEventListener("click", validateField);
+reset.addEventListener("click", formReset);
+displayCInfo.addEventListener("click", displayCInfo);
+clearCInfo.addEventListener("click", eraseInformation);
+
 
 });
 //This is for the additem.html form

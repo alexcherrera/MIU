@@ -223,29 +223,13 @@
 				
 				</div>
 				<div data-role="content">
-				<!--Form-->
+					<ul id="errorMessCInfo"></ul>
+					<ul id="itemsCInfoContainer"></ul>
+					<!--Form-->
 					<form action="" method="post" id="courseInfoForm">
 						<!--Department by Major Select Menu-->
 						<div data-role="fieldcontain">
-							<label for="courseDepartSelect">Department:</label>
-							<Select name="courseDepartSelect" id="courseDepartSelect" data-native-menu="false">
-								<option value="chooseMajorOpt">--Choose a Majar--</option>
-								<optgroup label="College Of Architecture">
-									<option value="Architecture">Architecture</option>
-								</optgroup>
-								<optgroup label="Institute Of Arts And Sciences">
-									<option value="Biology">Biology</option>
-									<option value="Mathematics">Mathematics</option>
-								</optgroup>
-								<optgroup label="Academy Of Business">
-									<option value="Accounting">Accounting</option>	
-									<option value="Economics">Economics</option>	
-								</optgroup>
-								<optgroup label="Sciences of Engineering Institute">
-									<option value="Computer Engineering">Computer Engineering</option>	
-									<option value="Electrical Engineering">Electrical Engineering</option>
-								</optgroup>
-							</select>
+							<label for="courseDepartSelect" id="courseDepartSelect">Department:</label>
 						</div>
 						<!--Course Name Input Field-->
 						<div data-role="fieldcontain">
@@ -279,9 +263,9 @@
 						<div data-role="fieldcontain">
 							<!--Teacher Name Input Field-->
 							<label for="teacherName">Teacher Name:</label>
-							<input type="text" name="teacherName" id="teacherName"/>
+							<input type="text" name="teacherName" id="teacherName" value="teacherName"/>
 							<!--Teacher Email Address Input Field-->
-							<label for="teacherEmail">Teacher Email:</label>
+							<label for="teacherEmail">Teacher Email Address:</label>
 							<input type="text" name="teacherEmail" id="teacherEmail"/>
 							<!--Teacher Phone Number Input Field-->
 							<label for="teacherPhone">Teacher Phone Number:</label>
@@ -311,10 +295,16 @@
 						</div>
 						<!--Reset and Submit Field-->
 						<div data-role="fieldcontain">
-							<input type="reset" value="Reset" data-theme="a"/>
-							<input type="submit" value="Add Course" data-theme="b"/>
+							<input type="reset" value="Reset" id="reset" data-theme="a"/>
+							<input type="submit" value="Add Course" id="submit"data-theme="b"/>
 						</div>
 					</form>	
+					<nav>
+						<br/>
+						<a href="#" id="clearCInfo">Erase Course</a>
+						<a href="#" id="displayCInfo">Display Course</a>
+						<a href="#courseInformation" id="addCInfo" style="display:none;">Add New Course</a>
+					<nav>
 				</div>
 				<div data-role="footer">
 					<!--Navigation Bar--> 
