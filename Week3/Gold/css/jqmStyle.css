@@ -1,0 +1,13 @@
+label.error {
+	display: block; 
+	margin: 10px 0;
+	color: #cc0000;
+}
+#cstext {
+	font-size:10px;
+	margin:2px;
+}
+#tastext {
+	font-size:10px;
+	margin:2px;
+}
