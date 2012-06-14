@@ -20,9 +20,9 @@
 	</head>
 	<body>
 		<!-- This is the first page -->
-		<div data-role="page" data-filter="true" id="home" data-url="index.html">
+	    <div data-role="page" data-filter="true" id="home" data-url="index.html">
 			<div data-role="header" data-position="inline" data-fullscreen="true">
- 				<!--Main header--> 
+				<!--Main header--> 
 				<h1>Organizer</h1>
 			</div>
 			<!--Content Section--> 
@@ -33,91 +33,15 @@
 				<!--Call To Action Button-->
 				<!--Add Quick Schedule--> 
 				<nav> 
-					<a href="additem.html" data-role="button" id="addQuickSchedule" data-ajax="false">Add Quick Schedule
-					</a>
+					<a href="additem.html" data-ajax="false" data-role="button" id="addQuickSchedule">Add Quick Schedule</a>
 				</nav>
-				<!--Browser Section-->
-				<h3>Organizers:</h3>
+				
+			</div>
 				<div data-role="listview" data-inset="true" data-filter="true" data-content-theme="a">
-					<div data-role="collapsible"data-iconpos="right">
-						<!--Browse About--> 
-						<!--Thumbnail Grid Pattern-->
-						<h1><div class="ui-grid-a">
-								<div class="ui-block-a">
-									<img src="images/QuestionMark.png" height="70px" width="50px" id="aboutPic"/>
-								</div>
-								<div class="ui-block-b">
-									<h3>About</h3>
-								</div>
-						</div></h1>
-						<li data-filtertext="About, Different organizers, Information">
-							<p>
-								Full description about the application and it's features.
-							</p>
-						</li><a href="#about" data-role="button">Details</a>
-					</div>
-					<div data-role="collapsible" data-iconpos="right">
-						<!--Browse College--> 
-						<!--Thumbnail Grid Pattern-->
-						<h1><div class="ui-grid-a">
-								<div class="ui-block-a">
-									<img src="images/College.png" height="70px" width="50px" id="collegePic"/>
-								</div>
-								<div class="ui-block-b">
-									<h3>College</h3>
-								</div>
-						</div></h1>
-						<li data-filtertext="Course information, Assignments, Events, Reminders, Todo List">
-							<p>
-								Create/view course information, and more.
-							</p>
-						</li><a href="#college" data-role="button">Details</a>
-					</div>
-					<div data-role="collapsible" data-iconpos="right">
-						<!--Browse Work--> 		
-						<!--Thumbnail Grid Pattern-->
-						<h1><div class="ui-grid-a">
-								<div class="ui-block-a">
-									<img src="images/Work.png" height="70px" width="50px" id="workPic"/>
-								</div>
-								<div class="ui-block-b">
-									<h3>Work</h3>
-								</div>
-						</div></h1>
-						<li data-filtertext="Work, Appointments, Contacts, Hours, Reminders, Todo List">
-							<p>Create/view work related calendar's, reminders,todo lists, due dates, and more.</p>
-						</li><a href="#work" data-role="button">Details</a>
-					</div>
-					<div data-role="collapsible" data-iconpos="right">
-						<!--Browse FamilyandPersonal--> 
-						<!--Thumbnail Grid Pattern-->
-						<h1><div class="ui-grid-a">
-								<div class="ui-block-a">
-									<img src="images/Family.png" height="70px" width="50" id="familyPic"/>
-								</div>
-								<div class="ui-block-b">
-									<h3>F&P</h3>
-								</div>
-						</div></h1>
-						<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List">
-							<p>(Family and Personal) Create/view all your calendar's related to your family such as birthdays,anniversaries, shopping list, and more.</p>
-						</li><a href="#familyAndpersonal" data-role="button">Details</a>
-					</div>
-					<div data-role="collapsible" data-iconpos="right">
-						<!--Browse Memo's--> 
-						<!--Thumbnail Grid Pattern-->
-						<h1><div class="ui-grid-a">
-								<div class="ui-block-a">
-									<img src="images/Memo.png" height="70px" width="40" id="memoPic"/>
-								</div>
-								<div class="ui-block-b">
-									<h3>Memo's</h3>
-								</div>
-						</div></h1>
-						<li data-filtertext="View Memos">
-							<p> Create/view general memo's and or quick memo's.</p>
-						</li><a href="#underConstruction" data-role="button">Details</a>
-					</div>
+					<!--Browse About--> 
+						<li data-filtertext="About, Different organizers, Information"><a href="#about" data-theme="c"><img src="images/QuestionMark.png" id="aboutPic"/><h3>About</h3>
+							<p id="aboutDescriptText">Full description about the</p><p>application and it's features.</p></a>
+						</li>
 				</div>
 			</div>
 			<div data-role="footer">
@@ -125,16 +49,15 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Bronze" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html">Gold App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week3/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week3/Gold/index.html">Bronze App</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<!--About Page--> 
-		<div data-role="page" id="about" data-add-back-btn="true">
-			<div data-role="header">
-				<h1>About</h>
+			<div data-role="page" id="about" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>About</h>
 			</div>
 			<div data-role="content">
 				<p id="aboutPage">The purpose of this application is to have a sense of balance for the typical college student between school, work, and personal activities. By using different types of methods suchs as calendar's, todo list, reminder, and more the student will be able to organize all activites on just one device.</p>
@@ -144,327 +67,10 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Bronze" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html">Gold App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week3/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week3/Gold/index.html">Bronze App</a></li>
 					</ul>
 				</div>
-			</div>
-		</div>
-		<!--College Page One Window Drilldown Links--> 
-		<div data-role="page" id="college" data-add-back-btn="true">
-			<div data-role="header">
-				<!--Header--> 
-				<h2>Categories</h2>
-			</div>
-			<div data-role="content">
-				<ul data-role="listview" data-filter="true" id="collegeNestedList" data-content-theme="g">
-					<li data-filtertext="Course, Professor name, Date's"><a href="#underConstruction" data-rel="dialog"><h3>Course Information</h3>
-						<p id="courseInfoText">This calendar is designed mainly for a college student but can be used by everone. Record information about your course, such as your professor's name, start and last day of class, the time class starts and finsihes, and much more.</p>
-						</a>	
-					</li>
-					<li data-filtertext="Course, Assignments, Class, Notes"><a href="#underConstruction" data-rel="dialog"><h3>Course Assignment</h3>
-						<p id="courseAssignText">Now you have the ability to add asignments for each class, add when recieved, when the due date is, notes, and more.</p>
-						</a>
-					</li>
-					<li data-filtertext="Events, Acitivites, Clubs, Sororities, Fraternities"><a href="#underConstruction" data-rel="dialog"><h3>Events</h3>
-						<p id="collegeEventsText">Be able to add all your college events such as activities for clubs, sororities, fraternities, and more.</p></a>
-					</li>
-					<li data-filtertext="Reminders, Course, View, Store, Priority"><a href="#underConstruction" data-rel="dialog"><h3>Remiders</h3>
-						<p id="collegeRemindersText">All your reminders related to courses or anything in your college will be in this section.</p>	
-						</a>
-					</li>
-					<li data-filtertext="Todo List, View, Store, Check List"><a href="#underConstruction" data-rel="dialog"><h3>Todo List</h3>
-						<p id="collegeTodoListText">All your todo's for your college life will be created and stored in this section.</p>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div data-role="footer">
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Bronze" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html">Gold App</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--Work Page One Window Drilldown Links--> 
-		<div data-role="page" id="work" data-add-back-btn="true">
-			<div data-role="header">
-				<!--Header-->
-				<h2>Categories</h2>
-			</div>
-			<div data-role="content">
-				<ul data-role="listview" data-filter="true" id="workNestedList" data-content-theme="g">
-					<li data-filtertext="Appointments, Date, Time, View, Store "><a href="#underConstruction" data-rel="dialog"><h3>Appointments</h3>
-						<p id="workAppointmentsText"> Add appointments with other co-workers, clients, meetings, deadlines, and more.</p>
-					</a>
-					</li>
-					<li data-filtertext="Contacts, Phone numbers, Email, Address"><a href="#underConstruction" data-rel="dialog"><h3>Contacts</h3>
-						<p id="contactsText"> Add co-workers, clients, who ever on your own contacts list to store phone numbers, email, and more.</p>
-					</a>
-					</li>
-					<li data-filtertext="Hours, Weekly, Monthly, Total Hours, Vacation time"><a href="#underConstruction" data-rel="dialog"><h3>Hours</h3>
-						<p id="workHoursText"> Add/view your hours that you have done weekly and the total. Look through all the features.</p>
-					</a>
-					</li>
-					<li data-filtertext="Reminders, Check List, Priority, View Store"><a href="#underConstruction" data-rel="dialog"><h3>Remiders</h3>
-						<p id="workRemindersText">All your reminders related to work, such as reminders for meetings, projects, etc., will be in this section.</p>	
-						</a>
-					</li>
-					<li data-filtertext="Check List, Daily List, Work Activities, Follow, View, Store"><a href="#underConstruction" data-rel="dialog"><h3>Todo List</h3>
-						<p id="workTodoListText">All your todo's for your work life such as what you have to complete that day or whenever you desire will be created and stored in this section.</p>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div data-role="footer">
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Bronze" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html">Gold App</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--Family and Personal Page One Window Drilldown Links--> 
-		<div data-role="page" id="familyAndpersonal" data-add-back-btn="true">
-			<div data-role="header">
-				<!--Header-->
-				<h2>Categories</h2>
-			</div>
-			<div data-role="content">
-				<ul data-role="listview" data-filter="true" id="family/personalNestList" data-content-theme="g">
-					<li data-filter="Birthday, Anniversaries, Family, Friends, Lists"><a href="#underConstruction" data-rel="dialog"><h3>Birthday's/Anniversaries</h3>
-						<p id="birthdays/anniversariesText"> Add birthdays of your love ones and friends, can have lists of birthday's and anniversaries for example, one list of birthday's for family and one for friends. Also have a different list for anniversaries works the same as the birthday lists.</p></a>
-					</li>
-					<li data-filter="Add Friends, Family, Contact List, Numbers, Emails"><a href="#underConstruction" data-rel="dialog"><h3>Contacts</h3>
-						<p id="family/personalContactsText"> Add friends, family, who ever on your own contacts list to store phone numbers, email, and more.</p></a>
-					</li>
-					<li data-filter="Add, View, Thoughts, Ideas, Diary, Journal"><a href="#underConstruction" data-rel="dialog"><h3>Journal</h3>
-						<p id="journalText"> Add/view your thoughts/ideas with the date recorded as well. Can be used as a diary and later be viewed or edited.</p></a>
-					</li>
-					<li data-filter="Reminders, Kids, Appointments, Check List."><a href="#underConstruction" data-rel="dialog"><h3>Remiders</h3>
-						<p id="family/personalRemindersText">All your reminders related to your family and personal life, such as reminders for your kids baseball games, doctor appointments, etc., will be in this section.</p></a>
-					</li>
-					<li data-filter=""><a href="#underConstruction" data-rel="dialog"><h3>Todo List</h3>
-						<p id="shoppingList">Create/view your shopping lists, have as many as you want, for example have one for the groceries, another for the kids birthday party, etc., all will be created and stored in this section.</p></a>
-					</li>
-				</ul>
-			</div>
-			<div data-role="footer">
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Bronze" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html">Gold App</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	<!--Memo Page-->
-		<!--Memo page-->
-		<div data-role="page" id="memo" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Memo's</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-			<div data-role="footer">
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week2/Bronze" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week2/Gold/index.html">Gold App</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--College Pages-->
-			<!--Course Information page--> 
-			<div data-role="page" id="courseInformation" data-add-back-btn="true">
-				<div data-role="header">
-					<!--Main header--> 
-					<h3>Course Info</h3>
-				
-				</div>
-				<div data-role="content">
-					
-					
-				</div>
-			</div>
-			<!--Course Assignments page--> 
-			<div data-role="page" id="courseAssignments" data-role="page" id="linkpage" data-add-back-btn="true">
-				<div data-role="header" data-position="fixed">
-					<!--Main header--> 
-					<h1>Course Assignments</h1>
-				
-				</div>
-				<div data-role="content">
-
-				</div>
-			</div>
-			<!--Events page--> 
-			<div data-role="page" id="collegeEvents" data-role="page" id="linkpage" data-add-back-btn="true">
-				<div data-role="header" data-position="fixed">
-					<!--Main header--> 
-					<h1>Events</h1>
-				
-				</div>
-				<div data-role="content">
-
-				</div>
-			</div>
-			<!--Reminders page--> 
-			<div data-role="page" id="collegeReminders" data-role="page" data-add-back-btn="true">
-				<div data-role="header" data-position="fixed">
-					<!--Main header--> 
-					<h1>Reminders</h1>
-				
-				</div>
-				<div data-role="content">
-
-				</div>
-			</div>
-			<!--Todo List page--> 
-			<div data-role="page" id="collegeTodoList" data-role="page" data-add-back-btn="true">
-				<div data-role="header" data-position="fixed">
-					<!--Main header--> 
-					<h1>Todo List</h1>
-				
-				</div>
-				<div data-role="content">
-
-				</div>
-			</div>
-	<!--Work links pages--> 
-		<!--Appointments page-->
-		<div data-role="page" id="workAppointments" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Appointments</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Contacts page-->
-		<div data-role="page" id="workContacts" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Contacts</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Hours page--> 
-		<div data-role="page" id="workHours" data-role="page"  data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Hours</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Reminders page--> 
-		<div data-role="page" id="workReminders" data-role="page" id="linkpage" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Reminders</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Todo List page-->
-		<div data-role="page" id="workTodoList" data-role="page" id="linkpage" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Todo List</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-	<!--Family and Personal Links Pages-->
-		<!--Birthday/Anniversaries page-->
-		<div data-role="page" id="birthdays/anniversaries" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Birthday's/Anniversaries</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Contacts page-->
-		<div data-role="page" id="family/personalContacts" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Contacts</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Journal page-->
-		<div data-role="page" id="journal" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Journal</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Reminders page-->
-		<div data-role="page" id="family/personalReminders" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Reminders</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Shopping List page-->
-		<div data-role="page" id="shoppingList" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed">
-				<!--Main header--> 
-				<h1>Shopping List</h1>
-			
-			</div>
-			<div data-role="content">
-
-			</div>
-		</div>
-		<!--Source Under Construction page-->
-		<div data-role="page" id="underConstruction" data-add-back-btn="true">
-			<div data-role="header">
-				<h1>Coming Soon</h1>
-			</div>
-			<div data-role="content">
-				<p>The page that you desire is Under Construction</p>
 			</div>
 		</div>
 		<!--JavaScript & JQuery-->
