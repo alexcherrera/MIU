@@ -1,0 +1,41 @@
+/*
+Alexander Herrera
+Project 2
+*/
+#imgCal {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left:15px;
+	padding: 5px;
+}
+label.error{
+	display: block;
+	margin: 10px 0;
+	color: #cc0000;
+}
+#schedErrorsLink {
+	display: none;
+}
+#descriptEntry {
+	text-align: center;
+}
+p {
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left:20px;
+	padding: 4px;
+	font-style: normal; 
+	font-variant: normal;
+	font-weight: bold; 
+	font-family: "Times New Roman";
+}
+form fieldset #errorMessages {
+	color: red;
+	font-weight: bold;
+}
+
+
+div ul li {
+	list-style-type: none;
+}
