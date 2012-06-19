@@ -12,9 +12,11 @@
 		<!--Page Title-->
 		<title>College Life Maintence Create Profile Page</title>	
 		<!--Link CSS Style Sheet-->
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+		<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+		<link rel="stylesheet" href="css/style.css"/>
+		<!--Modernizr-->
+		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
 		<div data-role="page" id="schedule" data-add-back-btn="true">
@@ -68,10 +70,10 @@
 					<div data-role="fieldcontain">
 						<!--Today's Date Input Field-->
 						<label for="todaysDate">Today's Date: </label>
-						<input type="date" name="todaysDate" id="todaysDate" placeholder="6/14/12" class="required"/>
+						<input type="date" name="todaysDate" id="todaysDate" data-role="datebox" data-options='{"mode": "calbox"}'class="required"/>
 						<!--Due Date Input Field-->
 						<label for="dueDate">Due Date: </label>
-						<input type="date" name="dueDate" id="dueDate" placeholder="6/15/12"class="required"/>
+						<input type="date" name="dueDate" id="dueDate" data-role="datebox" data-options='{"mode": "calbox"}' class="required"/>
 					</div>
 					<!--Number of Weeks in the Class Range-->
 					<div data-role="fieldcontain">
@@ -163,11 +165,13 @@
 				</ul>
 			</div>
 		</div>
-
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-		<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
-		<script src="js/jStorage.js" type="text/javascript"></script>
+		<!--JavaScript & JQuery-->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+		<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 		<script src="js/json.js" type="text/javascript"></script>
 	</body>	
