@@ -14,17 +14,15 @@
 		<meta http-equiv="cleartype" content="on">
 		<!--Title Tag-->
 		<title>College Organizer Launch Page</title>
-		<!--Link Sheets-->
-		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
-		<link rel="stylesheet" href="css/style.css"/>
-		<!--Modernizr-->
+		<!--Link CSS Style Sheet-->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
 		<!-- This is the first page -->
-	    <div data-role="page" data-filter="true" id="home" data-url="index.html" data-add-back-btn="true">
+		<div data-role="page" data-filter="true" id="home" data-url="index.html">
 			<div data-role="header" data-position="inline" data-fullscreen="true">
-				<!--Main header--> 
+ 				<!--Main header--> 
 				<h1>Organizer</h1>
 			</div>
 			<!--Content Section--> 
@@ -38,29 +36,88 @@
 					<a href="additem.html" data-role="button" id="addQuickSchedule" data-ajax="false">Add Quick Schedule
 					</a>
 				</nav>
-				<!--Browser Section--> 
+				<!--Browser Section-->
 				<h3>Organizers:</h3>
 				<div data-role="listview" data-inset="true" data-filter="true" data-content-theme="a">
-				<!--Browse About--> 
-					<li data-filtertext="About, Different organizers, Information"><a href="#about" data-rel="dialog" data-theme="c"><img src="images/QuestionMark.png" id="aboutPic"/><h3>About</h3>
-						<p id="about1">Full description about the</p><p id="about2">application and</p><p id="about3">it's features.</p></a>
-					</li>
-					<!--Browse College--> 
-					<li data-filtertext="Course information, Assignments, Events, Reminders, Todo List"><a href="#college" data-transition="flip"><img src="images/College.png" id="collegePic"/><h3>College</h3>
-						<p id="college1">Create/view course</p><p id="college2">information, and more.</p></a>
-					</li>
-					<!--Browse Work--> 		
-					<li data-filtertext="Work, Appointments, Contacts, Hours, Reminders, Todo List"><a href="#work"><img src="images/Work.png" id="workPic"/><h3>Work</h3>
-						<p id="work1">Create/view work related</p><p id="work2">calendar's, reminders,</p><p id="work3">todo lists, due dates,</p><p id="work4">and more.</p></a>
-					</li>
-					<!--Browse Family/Personal--> 
-					<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List"><a href="#familyAndpersonal"><img src="images/Family.png" id="familyPic"/><h3>Family/Personal</h3>
-						<p id="family1">Create/view all your</p><p id="family2">calendar's related to your</p><p id="family3">family such as birthdays,</p><p id="family4">anniversaries, shopping</p><p id="family5">list, and more.</p></a>
-					</li>
-					<!--Browse Memo's--> 
-					<li data-filtertext="View Memos"><a href="#underConstruction" data-rel="dialog"><img src="images/Memo.png" id="memoPic"/><h3>Memo's</h3>
-						<p id="memo1">Create/view general</p><p id="memo2">memo's and or quick memo's.</p></a>
-					</li>
+					<div data-role="collapsible"data-iconpos="right">
+						<!--Browse About--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/QuestionMark.png" height="70px" width="50px" id="aboutPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>About</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="About, Different organizers, Information">
+							<p>
+								Full description about the application and it's features.
+							</p>
+						</li><a href="#about" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse College--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/College.png" height="70px" width="50px" id="collegePic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>College</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="Course information, Assignments, Events, Reminders, Todo List">
+							<p>
+								Create/view course information, and more.
+							</p>
+						</li><a href="#college" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse Work--> 		
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/Work.png" height="70px" width="50px" id="workPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>Work</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="Work, Appointments, Contacts, Hours, Reminders, Todo List">
+							<p>Create/view work related calendar's, reminders,todo lists, due dates, and more.</p>
+						</li><a href="#work" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse FamilyandPersonal--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/Family.png" height="70px" width="50" id="familyPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>F&P</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="Family, Personal, Birthday's, Anniversaries, Journal, Shopping List">
+							<p>(Family and Personal) Create/view all your calendar's related to your family such as birthdays,anniversaries, shopping list, and more.</p>
+						</li><a href="#familyAndpersonal" data-role="button">Details</a>
+					</div>
+					<div data-role="collapsible" data-iconpos="right">
+						<!--Browse Memo's--> 
+						<!--Thumbnail Grid Pattern-->
+						<h1><div class="ui-grid-a">
+								<div class="ui-block-a">
+									<img src="images/Memo.png" height="70px" width="40" id="memoPic"/>
+								</div>
+								<div class="ui-block-b">
+									<h3>Memo's</h3>
+								</div>
+						</div></h1>
+						<li data-filtertext="View Memos">
+							<p> Create/view general memo's and or quick memo's.</p>
+						</li><a href="#underConstruction" data-role="button">Details</a>
+					</div>
 				</div>
 			</div>
 			<div data-role="footer">
@@ -68,8 +125,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Gold/index.html">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -87,8 +144,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Gold/index.html">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -102,22 +159,22 @@
 			<div data-role="content">
 				<ul data-role="listview" data-filter="true" id="collegeNestedList" data-content-theme="g">
 					<li data-filtertext="Course, Professor name, Date's"><a href="#underConstruction" data-rel="dialog"><h3>Course Information</h3>
-						<p id="course1">This calendar is designed mainly for a college</p><p id="course2"> student but can be used by everone.</p><p id="course3"> Record information about your course, such</p><p id="course4"> as your professor's name, start and</p><p id="course5"> last day of class, the time class </p><p id="course6">starts and finsihes, and much more.</p>
+						<p id="courseInfoText">This calendar is designed mainly for a college student but can be used by everone. Record information about your course, such as your professor's name, start and last day of class, the time class starts and finsihes, and much more.</p>
 						</a>	
 					</li>
 					<li data-filtertext="Course, Assignments, Class, Notes"><a href="#underConstruction" data-rel="dialog"><h3>Course Assignment</h3>
-						<p id="courseAssign1">Now you have the ability to add asignments</p><p id="courseAssign2"> for each class, add when recieved, when</p><p id="courseAssign3"> the due date is, notes, and more.</p>
+						<p id="courseAssignText">Now you have the ability to add asignments for each class, add when recieved, when the due date is, notes, and more.</p>
 						</a>
 					</li>
 					<li data-filtertext="Events, Acitivites, Clubs, Sororities, Fraternities"><a href="#underConstruction" data-rel="dialog"><h3>Events</h3>
-						<p id="collegeEvents1">Be able to add all your college events such</p><p id="collegeEvents2"> as activities for clubs, sororities, fraternities,</p><p id="collegeEvents3"> and more.</p></a>
+						<p id="collegeEventsText">Be able to add all your college events such as activities for clubs, sororities, fraternities, and more.</p></a>
 					</li>
 					<li data-filtertext="Reminders, Course, View, Store, Priority"><a href="#underConstruction" data-rel="dialog"><h3>Remiders</h3>
-						<p id="collegeReminders1">All your reminders related to courses or</p><p id="collegeReminders2"> anything in your college will be in this section.</p>	
+						<p id="collegeRemindersText">All your reminders related to courses or anything in your college will be in this section.</p>	
 						</a>
 					</li>
 					<li data-filtertext="Todo List, View, Store, Check List"><a href="#underConstruction" data-rel="dialog"><h3>Todo List</h3>
-						<p id="collegeTodoList1">All your todo's for your college life will be</p><p id="collegeTodoList2"> created and stored in this section.</p>
+						<p id="collegeTodoListText">All your todo's for your college life will be created and stored in this section.</p>
 						</a>
 					</li>
 				</ul>
@@ -127,8 +184,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Gold/index.html">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -168,13 +225,13 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Gold/index.html">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<!--Family/Personal Page One Window Drilldown Links--> 
+		<!--Family and Personal Page One Window Drilldown Links--> 
 		<div data-role="page" id="familyAndpersonal" data-add-back-btn="true">
 			<div data-role="header">
 				<!--Header-->
@@ -204,8 +261,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Gold/index.html">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -226,8 +283,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Bronze" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Gold/index.html">Gold App</a></li>
 					</ul>
 				</div>
 			</div>
@@ -345,7 +402,7 @@
 
 			</div>
 		</div>
-	<!--Family/Personal Links Pages-->
+	<!--Family and Personal Links Pages-->
 		<!--Birthday/Anniversaries page-->
 		<div data-role="page" id="birthdays/anniversaries" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed">
@@ -408,16 +465,6 @@
 			</div>
 			<div data-role="content">
 				<p>The page that you desire is Under Construction</p>
-			</div>
-			<div data-role="footer">
-				<!--Navigation Bar--> 
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#home" id="navhome">Home</a></li>
-						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
-						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<!--JavaScript & JQuery-->

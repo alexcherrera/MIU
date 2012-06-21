@@ -1,43 +1,61 @@
 <!doctype html>
 <!--Alexander Herrera-->
-<!--Project 2-->
+<!--Project 4-->
 <html>
 	<head>
 		<!--Meta Tags-->
 		<meta charset ="utf-8"/>
+		<meta name="description" content="Filling in course information such as course name, dates, etc"/>
+		<meta name="keywords" content="Course Information"/>
+		<meta name="robots" content="noindex, nofollow"/>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320"/>
 		<meta name="viewport" content="user-scalable=no, width=device-width"/>
-		<meta http-equiv="cleartype" content="on">
 		<!--Page Title-->
 		<title>College Life Maintence Create Profile Page</title>	
 		<!--Link CSS Style Sheet-->
 		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 		<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
-		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<!--Modernizr-->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
-		<div data-role="page" id="schedule" data-add-back-btn="true">
-			<div data-role="header" id="qSHeader" data-position="fixed">
+		<div data-role="page" id="quickSchedule" data-add-back-btn="true">
+			<div data-role="header" id="qSHeader">
 				<!--Main header--> 
-				<h1>Schedule</h1>
-				
-
+				<h1>Quick Schedule</h1>
 			</div>
 			<div data-role="content">
-				<form action="" method="post" id="collegeForm">	
+				<form action="#" method="post" id="collegeForm">	
 					<!--Legend Title Text--> 
-					<div data-role="header">
-						<h2>Add New Course:</h2>
-					</div>
-		
-					<div data-role="fieldcontain">
+					<legend>
+					<h2>Add New Course:</h2>
+					</legend>
+						<div data-role="fieldcontain">
+							<ul id="errorMessages"></ul>
+						</div>	
+						<div data-role="fieldcontain">
 						<label for="departments">Departments:</label>
 						<select name="departments" id="departments" data-native-menu="false" class="required">
+							<option data-placeholder="true" value>--Choose a Majar--</option>
+							<optgroup label="College Of Architecture">
+								<option value="Architecture">Architecture</option>
+							</optgroup>
+							<optgroup label="Institute Of Arts And Sciences">
+								<option value="Biology">Biology</option>
+								<option value="Mathematics">Mathematics</option>
+							</optgroup>
+							<optgroup label="Academy Of Business">
+								<option value="Accounting">Accounting</option>	
+								<option value="Economics">Economics</option>	
+							</optgroup>
+							<optgroup label="Sciences of Engineering Institute">
+								<option value="Computer Engineering">Computer Engineering</option>	
+								<option value="Electrical Engineering">Electrical Engineering</option>
+							</optgroup>
 						</select>	
-					</div>				
+					</div>
 					<div data-role="fieldcontain">
 						<!--Course Name Input Field-->
 						<label for="courseName">Course Name:</label>
@@ -67,7 +85,7 @@
 					<!--Is the Class on Campus or Online Slider-->
 					<div data-role="fieldcontain">
 						<label for="weeksOfClass">Is the Class on Campus or Online:</label>
-						<select data-role="slider">
+						<select data-role="slider" id="slideValue">
 							<option value="off">Campus</option>
 							<option value="on">Online</option>
 						</select>
@@ -100,21 +118,18 @@
 						<input type="text" name="teacherEmail" id="teacherEmail" class="required" placeholder="aRoberts@fullsail.edu"/>
 						<!--Teacher Phone Number Input Field-->
 						<label for="teacherPhone">Teacher Phone Number:</label>
-						<input type="text" name="teacherPhone" id="teacherPhone" class="required" placeholder="786-395-1416"/>
+						<input type="text" name="teacherPhone" id="teacherPhone" class="required" placeholder="111-222-3333"/>
 						<!--Best Method to Contact Teacher Checkboxes-->
 					</div>
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup">
 							<legend>Best Method To Get In Contact:</legend>
 							<!--Email Option-->
-							<input type="checkbox" value="sendEmail" name="bestMethodContact" id="sendEmail" checked="checked" class="required"/>
-							<label for="sendEmail">Email</label>
+							<label for="sendEmail"><input type="checkbox" value="sendEmail" name="bestMethodContact" id="sendEmail" checked="checked" class="required"/>Email</label>
 							<!--Phone Number Option-->
-							<input type="checkbox" value="Phone" name="bestMethodContact" id="Phone"/>
-							<label for="Phone">Phone</label>
+							<label for="Phone"><input type="checkbox" value="phone" name="bestMethodContact" id="phone"/>Phone</label>
 							<!--Office Hours Option-->
-							<input type="checkbox" value="Office-Hours" name="bestMethodContact" id="Office-Hours"/>
-							<label for="Office-Hours">Office Hours</label>
+							<label for="Office-Hours"><input type="checkbox" value="office-Hours" name="bestMethodContact" id="office-Hours"/>Office Hours</label>
 						</fieldset>
 					</div>
 					<!--Note Section-->
@@ -127,33 +142,35 @@
 						<input type="reset" value="Reset" id="reset" data-theme="a"/>
 					</div>
 					<a href="#scheduleErrors" id="schedErrorsLink" data-rel="dialog" data-transition="pop">Open Errors</a>
-				</form>
-				<nav>
-					<br/>
-					<a href="#review" id="reviewLink">Review Information</a>
-					<a href="#" id="clear">Erase Information</a>
-					<a href="#" id="display">Display Information</a>
-					<a href="additem.html" id="add" style="display:none;">Add New Assignment</a>
-				</nav>
+				</form>	
+			</div>
+			<nav>
+				<br/>
+				<a href="#" id="clear" id="display" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-role="button" data-add-back-btn="true">Erase Information</a>
+				<a href="#displayLink" id="display" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-role="button" data-add-back-btn="true">Display Information</a>
+				<a href="additem.html" id="add" style="display:none;">Add New Assignment</a>
+			<nav>
+			<div data-role="footer">
+				<!--Navigation Bar--> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html" data-ajax="false" id="navhome">Home</a></li>
+						<li><a href="https://github.com/alexcherrera/MIU/tree/gh-pages/Week4/Gold" id="linkgh-pages">GitHub Page</a></li>
+						<li><a href="http://alexcherrera.github.com/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div data-role="dialog" id="scheduleErrors">
-			<div data-role="header" data-position="fixed">
+			
+		<div data-role="page" id="displayLinkpg" data-add-back-btn="true">
+			<div data-role="header" id="qSHeader" data-position="fixed">
 				<!--Main header--> 
-				<h1>Fields Missing</h1>
-				
-
+				<h1>Display Information</h1>
 			</div>
-			<div data-role="content">
-				<ul>
-					<li>Test.</li>
-				</ul>
-			</div>
+			<div data-role="content" id="displayLink">
+			</div>	
 		</div>
-		<div>
 
-		</div>
-		<!--JavaScript & JQuery-->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
 		<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
 		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>

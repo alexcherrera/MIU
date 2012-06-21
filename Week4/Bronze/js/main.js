@@ -1,36 +1,10 @@
 /*
 Alexander Herrera
-Project 4
+Project 1
 For the browser I used Google Chrome, Safari web inspector hardly worked
 */
 
-var parseData = function(data) {
-        console.log(data);
-};
-$(document).ready(function(){
-        //Save the data that is being passed by the submitHandler:
-        var collForm = $("#collForm");
-        var schedErrorsLink = $("#scheduleErrors");
-        
-        collForm.validate({
-                invalidHandler: function(form, validator){
-                        schedErrorsLink.click();
-                        var html = '';
-                        for (var key in validator.submitted) {
-                               var label = $('label[for^="'+ key +'"]').not('[generated]');
-                               var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-                               var fieldName = legend.length ? legend.text() : label.text();
-                               html += '<li>'+ fieldName +'</li>';
 
-                        };
-                        $("#scheduleErrors ul").html(html);     
-                },
-                submitHandler: function () {
-                        var data = collForm.serializeArray();
-                        parseData(data);
-                }
-        })  
-});
 window.addEventListener("DOMContentLoaded", function () {
     console.log("working");
 //Getting the elements by id.
@@ -306,20 +280,10 @@ window.addEventListener("DOMContentLoaded", function () {
     function getInfoToDisplay () {
         visibilityOfElement("on");
         displayCheck();
-        var disLink = idTag('displayLink');
-        var createDiv = makeTag("div");
+        var createDiv = makeTag('div');
         createDiv.setAttribute("id", "items");
-        createDiv.setAttribute("data-role", "content");
-        createDiv.setAttribute("data-theme", "b");
-        var principleDiv = makeTag("div");
-        principleDiv.setAttribute("class", "contact-primary");
-        var createRoster = makeTag("ul");
-        createRoster.setAttribute("id", "view");
-        createRoster.setAttribute("data-role", "listview");
-        createRoster.setAttribute("data-inset", "true");
-        createRoster.setAttribute("data-filter", "true");
-        createDiv.appendChild(principleDiv);
-        principleDiv.appendChild(createRoster);
+        var createRoster = makeTag('ul');
+        createDiv.appendChild(createRoster);
         document.body.appendChild(createDiv);
         idTag('items').style.display = "block";//Just to make sure it does display.
         for (var i = 0, w = localStorage.length; i < w; i++) {
