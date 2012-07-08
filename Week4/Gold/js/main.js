@@ -31,7 +31,7 @@ $(document).ready(function(){
                 }
         })  
 });
-window.addEventListener("DOMContentLoaded", function () {
+$(document).live('pageinit', function () {
     console.log("working");
 //Getting the elements by id.
     function idTag (e) {
@@ -356,7 +356,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     }
 //Main Event Listeners
-    linkOfClear.addEventListener("click", eraseInformation);
-    linkOfDisplay.addEventListener("click", getInfoToDisplay);
-    save.addEventListener("click", validateField);//Change to validate to check the user input correctly before saving to local storage.
+    $(linkOfClear).bind("click", eraseInformation);
+    $(linkOfDisplay).bind("click", getInfoToDisplay);
+    $(save).bind("click", validateField);//Change to validate to check the user input correctly before saving to local storage.
 });
